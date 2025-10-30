@@ -1,0 +1,49 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: white;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+a {
+  color: #00C9D8;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+.hero {
+  padding: 80px 20px;
+}
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+}
+button {
+  background-color: #00C9D8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #111;
+}
+.light {
+  background-color: #f3f3f3;
+  color: #111;
+}
