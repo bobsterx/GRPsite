@@ -1,1 +1,82 @@
-<!DOCTYPE html><html lang='uk'><head><meta charset='UTF-8'><title>Профіль</title><link rel='stylesheet' href='css/style.css'></head><body><h1>Профіль</h1><p>Авторизація з’явиться пізніше.</p></body></html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профіль гравця GravenholdRP</title>
+  <meta name="description" content="Переглянь свій профіль GravenholdRP: привітання, фракція, рівень та дата приєднання.">
+  <link rel="stylesheet" href="css/profile.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/profile.js" defer></script>
+</head>
+<body class="page-profile">
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Основна навігація">
+      <ul class="nav-links nav-left">
+        <li><a href="news.html">Новини</a></li>
+        <li><a href="wiki.html">Вікі</a></li>
+        <li><a href="map.html">Карта</a></li>
+      </ul>
+      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+        <span class="logo-text">GravenholdRP</span>
+      </a>
+      <ul class="nav-links nav-right">
+        <li><a href="donate.html">Пожертви</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="profile.html">Профіль</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="profile-hero" data-observe>
+      <div class="profile-aurora" aria-hidden="true"></div>
+      <div class="profile-aurora" aria-hidden="true"></div>
+      <div class="profile-content">
+        <h1 id="welcomeMessage">Вітаємо в GravenholdRP</h1>
+        <p>Це твій центр керування пригодою. Онови дані профілю, переглянь статистику та вирушай на наступний івент.</p>
+        <div class="profile-actions">
+          <a class="ghost-button" href="login.html">Увійти</a>
+          <a class="cta-button" href="register.html">Створити акаунт</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-panel" id="profilePanel" data-observe>
+      <div class="panel-header">
+        <h2>Деталі гравця</h2>
+        <button id="logoutBtn" class="ghost-button" type="button">Вийти</button>
+      </div>
+      <dl class="profile-stats">
+        <div>
+          <dt>Нікнейм</dt>
+          <dd id="statNickname">—</dd>
+        </div>
+        <div>
+          <dt>Фракція</dt>
+          <dd id="statFaction">—</dd>
+        </div>
+        <div>
+          <dt>Рівень</dt>
+          <dd id="statLevel">—</dd>
+        </div>
+        <div>
+          <dt>Дата приєднання</dt>
+          <dd id="statJoined">—</dd>
+        </div>
+      </dl>
+      <div class="profile-badges">
+        <h3>Досягнення</h3>
+        <ul id="badgeList">
+          <li data-empty>Увійди, щоб побачити свої трофеї.</li>
+        </ul>
+      </div>
+      <p id="authStatus" class="form-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  </footer>
+</body>
+</html>

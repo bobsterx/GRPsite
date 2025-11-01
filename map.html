@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карта світу GravenholdRP</title>
+  <meta name="description" content="Переглянь інтерактивну карту GravenholdRP та дізнайся про території, контрольовані фракціями.">
+  <link rel="stylesheet" href="css/map.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-map">
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Основна навігація">
+      <ul class="nav-links nav-left">
+        <li><a href="news.html">Новини</a></li>
+        <li><a href="wiki.html">Вікі</a></li>
+        <li><a href="map.html">Карта</a></li>
+      </ul>
+      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+        <span class="logo-text">GravenholdRP</span>
+      </a>
+      <ul class="nav-links nav-right">
+        <li><a href="donate.html">Пожертви</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="profile.html">Профіль</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" data-observe>
+      <p class="section-heading">Путівник світом</p>
+      <h1 class="hero-title">Карта GravenholdRP</h1>
+      <p class="hero-text">Наведи курсор на регіони, щоб дізнатися, хто контролює територію та які бонуси вона надає. Точки з індикатором подій оновлюються після кожного івенту.</p>
+    </section>
+
+    <section class="map-section">
+      <div class="map-board" role="img" aria-label="Інтерактивна карта світу">
+        <button class="map-region" data-region="gravenhold" style="--x:35%;--y:42%;">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="region-dot" aria-hidden="true"></span>
+        </button>
+        <button class="map-region" data-region="luminare" style="--x:58%;--y:65%;">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="region-dot" aria-hidden="true"></span>
+        </button>
+        <button class="map-region" data-region="eridia" style="--x:18%;--y:28%;">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="region-dot" aria-hidden="true"></span>
+        </button>
+        <button class="map-region" data-region="astral" style="--x:72%;--y:28%;">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="region-dot" aria-hidden="true"></span>
+        </button>
+        <button class="map-region" data-region="cradle" style="--x:44%;--y:78%;">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="region-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+      <aside class="map-info" aria-live="polite">
+        <h2 id="regionTitle">Столиця Gravenhold</h2>
+        <p id="regionDescription">Магістральний вузол світу, де зберігається архів лору. Контроль утримує <strong>Орден арканістів</strong>, відкриваючи портали до сезонних підземель.</p>
+        <ul id="regionStats" class="region-stats">
+          <li><strong>Бонус:</strong> +15% до нагород за сюжетні квести</li>
+          <li><strong>Статус:</strong> Спокійний тиждень</li>
+          <li><strong>Остання подія:</strong> Рада фракцій «Арканіум»</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  </footer>
+
+  <script>
+    const regionData = {
+      gravenhold: {
+        title: 'Столиця Gravenhold',
+        description:
+          'Магістральний вузол світу, де зберігається архів лору. Контроль утримує <strong>Орден арканістів</strong>, відкриваючи портали до сезонних підземель.',
+        stats: [
+          '<strong>Бонус:</strong> +15% до нагород за сюжетні квести',
+          '<strong>Статус:</strong> Спокійний тиждень',
+          '<strong>Остання подія:</strong> Рада фракцій «Арканіум»',
+        ],
+      },
+      luminare: {
+        title: 'Люмінар',
+        description:
+          'Приморський анклав Синдикату патриціїв. Тут видобувають кристалічний флюкс і проводять морські івенти під покровом світляків.',
+        stats: [
+          '<strong>Бонус:</strong> Знижка 20% на торгові збори',
+          '<strong>Статус:</strong> Торги відкриті',
+          '<strong>Остання подія:</strong> Аукціон флюксу',
+        ],
+      },
+      eridia: {
+        title: 'Рубеж Еридії',
+        description:
+          'Оборонний фронтир Гільдії клинків. Фортеці стримують натиск пустотних істот, а гравці отримують бойові титули.',
+        stats: [
+          '<strong>Бонус:</strong> +10% до бойових нагород',
+          '<strong>Статус:</strong> Посилена охорона',
+          '<strong>Остання подія:</strong> Турнір «Щит Світанку»',
+        ],
+      },
+      astral: {
+        title: 'Астральні острови',
+        description:
+          'Високі платформи над хмарами, доступні лише через портали арканістів. Служать джерелом рідкісних рун і легендарних ресурсів.',
+        stats: [
+          '<strong>Бонус:</strong> Унікальні рунні матеріали',
+          '<strong>Статус:</strong> Патруль аерофлоту',
+          '<strong>Остання подія:</strong> Експедиція «Крилатий оберіг»',
+        ],
+      },
+      cradle: {
+        title: 'Колодязь Тітанів',
+        description:
+          'Підземний регіон із древніми механізмами. Контролюється союзом фракцій, що досліджують технології предків.',
+        stats: [
+          '<strong>Бонус:</strong> +25% до винагород за рейди',
+          '<strong>Статус:</strong> Активні розкопки',
+          '<strong>Остання подія:</strong> Рейд «Гул механізмів»',
+        ],
+      },
+    };
+
+    const titleEl = document.getElementById('regionTitle');
+    const descriptionEl = document.getElementById('regionDescription');
+    const statsEl = document.getElementById('regionStats');
+
+    document.querySelectorAll('.map-region').forEach((region) => {
+      region.addEventListener('mouseenter', () => updateRegion(region.dataset.region));
+      region.addEventListener('focus', () => updateRegion(region.dataset.region));
+    });
+
+    function updateRegion(key) {
+      const data = regionData[key];
+      if (!data) return;
+      titleEl.innerHTML = data.title;
+      descriptionEl.innerHTML = data.description;
+      statsEl.innerHTML = data.stats.map((item) => `<li>${item}</li>`).join('');
+    }
+  </script>
+</body>
+</html>

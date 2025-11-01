@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація в GravenholdRP</title>
+  <meta name="description" content="Створи обліковий запис GravenholdRP, обери фракцію та розпочни пригоду на рольовому сервері.">
+  <link rel="stylesheet" href="css/register.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/register.js" defer></script>
+</head>
+<body class="page-register">
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Основна навігація">
+      <ul class="nav-links nav-left">
+        <li><a href="news.html">Новини</a></li>
+        <li><a href="wiki.html">Вікі</a></li>
+        <li><a href="map.html">Карта</a></li>
+      </ul>
+      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+        <span class="logo-text">GravenholdRP</span>
+      </a>
+      <ul class="nav-links nav-right">
+        <li><a href="donate.html">Пожертви</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="profile.html">Профіль</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="auth-panel" data-observe>
+      <div class="panel-header">
+        <h1>Створи обліковий запис</h1>
+        <p>Обери свій шлях у GravenholdRP, вкажи фракцію та отримай стартові бонуси після входу.</p>
+      </div>
+      <form id="registerForm" class="auth-form" novalidate>
+        <label class="field">
+          <span>Нікнейм</span>
+          <input type="text" name="username" id="registerUsername" autocomplete="username" required>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" id="registerEmail" autocomplete="email" required>
+        </label>
+        <label class="field">
+          <span>Пароль</span>
+          <input type="password" name="password" id="registerPassword" autocomplete="new-password" required>
+        </label>
+        <label class="field">
+          <span>Фракція</span>
+          <select name="faction" id="registerFaction" required>
+            <option value="">Оберіть фракцію</option>
+            <option value="Гільдія клинків">Гільдія клинків</option>
+            <option value="Орден арканістів">Орден арканістів</option>
+            <option value="Синдикат патриціїв">Синдикат патриціїв</option>
+          </select>
+        </label>
+        <button type="submit" class="primary-btn">Зареєструватися</button>
+        <p class="form-note">Вже маєш акаунт? <a href="login.html">Увійти</a></p>
+        <p id="registerStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  </footer>
+</body>
+</html>

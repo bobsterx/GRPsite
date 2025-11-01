@@ -1,29 +1,122 @@
 <!DOCTYPE html>
-<html lang='uk'>
+<html lang="uk">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>GravenholdRP</title>
-  <link rel='stylesheet' href='css/style.css'>
-  <script src='js/theme.js' defer></script>
-  <script src='js/main.js' defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GravenholdRP 1.20.1 — Світ, що розкривається твоїми легендами</title>
+  <meta name="description" content="Офіційний портал Minecraft-сервера GravenholdRP 1.20.1. Новини, карта світу, вікі та профіль гравця в одній RPG-екосистемі.">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body>
-  <header>
-    <nav>
-      <a href='index.html'>Головна</a>
-      <a href='wiki.html'>Вікі</a>
-      <a href='news.html'>Новини</a>
-      <a href='support.html'>Підтримка</a>
-      <a href='about.html'>Про нас</a>
-      <a href='profile.html'>Профіль</a>
+<body class="page-home">
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Основна навігація">
+      <ul class="nav-links nav-left">
+        <li><a href="news.html">Новини</a></li>
+        <li><a href="wiki.html">Вікі</a></li>
+        <li><a href="map.html">Карта</a></li>
+      </ul>
+      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+        <span class="logo-text">GravenholdRP</span>
+      </a>
+      <ul class="nav-links nav-right">
+        <li><a href="donate.html">Пожертви</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="profile.html">Профіль</a></li>
+      </ul>
     </nav>
   </header>
-  <section class='hero'>
-    <img src='assets/logo.png' alt='GravenholdRP' class='logo'>
-    <h1>Світ, де історії оживають — приєднуйся до GravenholdRP.</h1>
-    <button onclick="window.location.href='wiki.html'">Грати зараз</button>
-  </section>
-  <footer>© 2025 GravenholdRP | Усі права захищено</footer>
+
+  <main>
+    <section class="hero" data-observe>
+      <div class="hero-aura" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="section-heading">GravenholdRP 1.20.1</p>
+        <h1 class="hero-title">Створи хроніку, яку читатимуть покоління</h1>
+        <p class="hero-text">Рольовий світ у Minecraft, де фракції борються за владу, економіка реагує на кожен крок, а твій персонаж стає легендою. Приєднуйся до сезонного оновлення «Арканіум» уже сьогодні.</p>
+        <div class="hero-actions">
+          <a class="cta-button" href="profile.html">Приєднатися зараз</a>
+          <a class="ghost-button" href="map.html">Дослідити карту</a>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true"></div>
+    </section>
+
+    <section class="features" id="features" data-observe>
+      <p class="section-heading">Що на тебе чекає</p>
+      <h2 class="section-title">Світ із живою політикою та магією</h2>
+      <div class="feature-grid">
+        <article class="feature-card" data-delay="0" data-observe>
+          <div class="feature-icon">⚔️</div>
+          <h3 class="feature-title">Фракції зі своїми законами</h3>
+          <p class="feature-text">Гільдія клинків, Орден арканістів, Патриції купців — кожне угруповання має внутрішні правила, рада старійшин та сезонні квести.</p>
+        </article>
+        <article class="feature-card" data-delay="120" data-observe>
+          <div class="feature-icon">🌆</div>
+          <h3 class="feature-title">Міста, що дихають</h3>
+          <p class="feature-text">Побудуй свій район, керуй виробництвом, торгуй рідкісними ресурсами та впливай на вигляд столиці, яка змінюється щотижня.</p>
+        </article>
+        <article class="feature-card" data-delay="240" data-observe>
+          <div class="feature-icon">🔮</div>
+          <h3 class="feature-title">Баланс магії й технологій</h3>
+          <p class="feature-text">Опановуй алхімічні печі, арканічні сфери й прототипи редстоун-машин, щоб комбінувати ритуали з механічними винаходами.</p>
+        </article>
+        <article class="feature-card" data-delay="360" data-observe>
+          <div class="feature-icon">📜</div>
+          <h3 class="feature-title">Хроніки сезону</h3>
+          <p class="feature-text">Щотижня ми публікуємо підсумки івентів, нові лор-розділи та голосування за долю ключових персонажів світу.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="world" data-observe>
+      <div class="world-card" data-delay="0" data-observe>
+        <h2 class="section-title">Останні оновлення</h2>
+        <ul class="timeline-list">
+          <li class="timeline-item">
+            <span class="timeline-date">Березень 2025</span>
+            <div class="timeline-content">
+              <h4>Сезон «Арканіум»</h4>
+              <p>Нова механіка фракційних контрактів, розширені підземелля та рейди на кристалічні шахти з унікальними сетами.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">Лютий 2025</span>
+            <div class="timeline-content">
+              <h4>Економічна реформа</h4>
+              <p>Введено патенти на ремесла, гільдійні контракти та біржу ресурсів, що реагує на попит гравців у реальному часі.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">Січень 2025</span>
+            <div class="timeline-content">
+              <h4>Перезапуск лору</h4>
+              <p>Сюжетна арка «Кривава зоря» інтегрує вибір гравців у майбутні івенти та відкриває доступ до секретних архівів столиці.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="world-card" data-delay="180" data-observe>
+        <h2 class="section-title">Занурся в атмосферу</h2>
+        <p class="world-text">Gravenhold — місто на краю світу, де небесні кристали освітлюють ніч, а магічний флюкс підтримує життя. Обирай роль дипломата, майстра чи мандрівника й формуй долю регіонів на карті. Кожен сезон ми розширюємо світ новими руїнами, анклавами та загадками.</p>
+        <a class="ghost-button" href="about.html">Дізнатися більше</a>
+      </div>
+    </section>
+
+    <section class="cta" data-observe>
+      <div class="cta-inner" data-observe>
+        <h2>Готовий до пригод?</h2>
+        <p>Створи акаунт, обери фракцію і заходь на сервер, щоб твоя історія стала каноном нашого світу.</p>
+        <div class="cta-actions">
+          <a class="cta-button" href="register.html">Створити акаунт</a>
+          <a class="ghost-button" href="login.html">Увійти</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  </footer>
 </body>
 </html>

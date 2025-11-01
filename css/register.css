@@ -1,0 +1,112 @@
+@import url('main.css');
+
+.auth-panel {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: clamp(60px, 10vw, 110px) clamp(24px, 8vw, 80px);
+}
+
+.panel-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.panel-header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 12px;
+}
+
+.panel-header p {
+  color: var(--muted);
+}
+
+.auth-form {
+  background: linear-gradient(150deg, rgba(24, 24, 40, 0.92), rgba(32, 28, 56, 0.82));
+  border-radius: 28px;
+  padding: 36px 30px;
+  border: 1px solid rgba(138, 94, 255, 0.3);
+  box-shadow: 0 28px 70px rgba(79, 111, 255, 0.24);
+  display: grid;
+  gap: 22px;
+}
+
+.field {
+  display: grid;
+  gap: 10px;
+}
+
+.field span {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(207, 213, 255, 0.7);
+}
+
+.field input,
+.field select {
+  background: rgba(18, 18, 32, 0.9);
+  border: 1px solid rgba(138, 94, 255, 0.3);
+  border-radius: 16px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.field select {
+  appearance: none;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23cfd5ff" viewBox="0 0 16 16"%3E%3Cpath d="M3.204 5.5l4.596 4.596L12.396 5.5H3.204z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: rgba(138, 94, 255, 0.6);
+  box-shadow: 0 0 0 2px rgba(138, 94, 255, 0.3);
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-alt));
+  padding: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #0f0f10;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.primary-btn:hover,
+.primary-btn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 60px rgba(138, 94, 255, 0.35);
+}
+
+.form-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.form-note a {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.form-status {
+  min-height: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.form-status.error {
+  color: #ff7d9c;
+}
+
+.form-status.success {
+  color: #7dffb3;
+}
