@@ -1,1 +1,101 @@
-<!DOCTYPE html><html lang='uk'><head><meta charset='UTF-8'><title>Новини</title><link rel='stylesheet' href='css/style.css'></head><body><h1>Новини GravenholdRP</h1><article><h2>Оновлення 1.0</h2><p>Нові фракції, нові пригоди!</p></article></body></html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новини GravenholdRP — Оновлення та ігрові події</title>
+  <meta name="description" content="Читайте свіжі новини GravenholdRP: патчі, сезонні івенти, зміни економіки та майбутні оновлення сервера.">
+  <link rel="stylesheet" href="css/news.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="main-nav">
+      <ul class="nav-links nav-left">
+        <li><a href="news.html">Новини</a></li>
+        <li><a href="wiki.html">Вікі</a></li>
+      </ul>
+      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+        <span class="logo-text">GravenholdRP</span>
+      </a>
+      <ul class="nav-links nav-right">
+        <li><a href="donate.html">Пожертви</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="profile.html">Профіль</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-banner">
+      <h1>Новини та звіти зі світу GravenholdRP</h1>
+      <p>Слідкуй за життям серверу: сезонні патчі, глобальні війни, дипломатичні зустрічі та внутрішні події фракцій. Тут ми ділимося всім, що формує канон.</p>
+    </section>
+
+    <section class="news-container">
+      <div class="news-grid">
+        <article class="news-card" data-theme="arcane">
+          <div class="news-visual" role="img" aria-label="Магічний горизонт GravenholdRP"></div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span>27.03.2025</span>
+              <span>Патч нотатки</span>
+            </div>
+            <h2 class="news-title">Арканіум відкрито для дослідників</h2>
+            <p class="news-excerpt">У центрі столиці з&#39;явилися портали до Арканіуму — плаваючої цитаделі, де гравці вивчають розломи енергії. Лише фракції зі стабільною репутацією можуть отримати доступ.</p>
+            <a class="read-more" href="#">Читати більше</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-theme="festival">
+          <div class="news-visual" role="img" aria-label="Вечір над портовим містом GravenholdRP"></div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span>12.03.2025</span>
+              <span>Івенти</span>
+            </div>
+            <h2 class="news-title">Карнавал Світла повертається</h2>
+            <p class="news-excerpt">Щорічний фестиваль починається з параду фракцій і закінчується спільним рейдом проти Тіньового перевертня. Учасники отримають ексклюзивні косметичні ефекти.</p>
+            <a class="read-more" href="#">Читати більше</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-theme="economy">
+          <div class="news-visual" role="img" aria-label="Міські стіни GravenholdRP вночі"></div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span>03.03.2025</span>
+              <span>Економіка</span>
+            </div>
+            <h2 class="news-title">Реформа ремісничих гільдій</h2>
+            <p class="news-excerpt">Гільдії ковалів і алхіміків отримали нові податкові пільги. Підтримай місто поставками ресурсів, щоб розблокувати спільні проєкти та нові декоративні блоки.</p>
+            <a class="read-more" href="#">Читати більше</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="news-template">
+        <h2>Швидкий шаблон для новини</h2>
+        <p>Скопіюй та встав у розмітку, замінивши дані на свої.</p>
+        <pre><code>&lt;article class=&quot;news-card&quot; data-theme=&quot;custom&quot;&gt;
+  &lt;div class=&quot;news-visual&quot; role=&quot;img&quot; aria-label=&quot;Опис події&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;news-body&quot;&gt;
+    &lt;div class=&quot;news-meta&quot;&gt;
+      &lt;span&gt;Дата&lt;/span&gt;
+      &lt;span&gt;Категорія&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h2 class=&quot;news-title&quot;&gt;Заголовок новини&lt;/h2&gt;
+    &lt;p class=&quot;news-excerpt&quot;&gt;Короткий опис новини, який зацікавлює читача.&lt;/p&gt;
+    &lt;a class=&quot;read-more&quot; href=&quot;#&quot;&gt;Читати більше&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+        <p class="template-tip">Використай <code>data-theme</code>, щоб швидко змінити палітру (варіанти: <strong>arcane</strong>, <strong>festival</strong>, <strong>economy</strong>) або задай власні кольори через CSS-змінні <code>--visual-start</code> і <code>--visual-end</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  </footer>
+</body>
+</html>
