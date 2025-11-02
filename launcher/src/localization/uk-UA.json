@@ -1,0 +1,58 @@
+{
+  "appName": "GravenholdRP",
+  "tabs": {
+    "home": "Головна",
+    "updates": "Оновлення",
+    "settings": "Налаштування",
+    "support": "Підтримка",
+    "social": "Соцмережі"
+  },
+  "home": {
+    "welcomeTitle": "Ласкаво просимо до GravenholdRP",
+    "welcomeSubtitle": "Реалістичний середньовічний досвід з фракціями вікінгів, слов\"ян та візантійців",
+    "componentsTitle": "Компоненти запуску",
+    "launch": "Запустити гру",
+    "install": "Встановити",
+    "update": "Оновити",
+    "installed": "Встановлено",
+    "installing": "Встановлення...",
+    "required": "Обов'язково",
+    "optional": "Опціонально"
+  },
+  "updates": {
+    "title": "Останні новини",
+    "empty": "Наразі немає новин."
+  },
+  "settings": {
+    "javaPath": "Шлях до Java",
+    "choose": "Обрати...",
+    "ram": "RAM (ГБ)",
+    "resolution": "Роздільна здатність",
+    "theme": "Тема",
+    "dark": "Темна",
+    "light": "Світла",
+    "winter": "Зимовий режим",
+    "save": "Зберегти налаштування",
+    "autoUpdate": "Автооновлення лаунчера"
+  },
+  "support": {
+    "faqTitle": "Часті питання",
+    "contactTitle": "Зв\'яжіться з нами",
+    "category": "Категорія",
+    "categories": {
+      "tech": "Технічна підтримка",
+      "account": "Акаунт",
+      "other": "Інше"
+    },
+    "email": "Електронна пошта",
+    "message": "Повідомлення",
+    "send": "Надіслати",
+    "success": "Звернення надіслано",
+    "error": "Сталася помилка"
+  },
+  "social": {
+    "discord": "Discord",
+    "telegram": "Telegram",
+    "website": "Вебсайт"
+  }
+}
