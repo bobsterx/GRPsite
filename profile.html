@@ -1,65 +1,145 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Профіль GravenholdRP — Вхід до світу</title>
-  <meta name="description" content="Увійди або зареєструйся, щоб керувати персонажем у GravenholdRP. Авторизація зберігається локально для швидкого доступу.">
+  <title>Профіль GravenholdRP — Обери фракцію та керуй прогресом</title>
+  <meta name="description" content="Увійди до профілю GravenholdRP, відстежуй фракційні завдання, статистику персонажа та зимові досягнення. Реалістичний середньовічний світ Minecraft без магії.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/winterevent.css">
   <script src="js/main.js" defer></script>
   <script src="js/profile.js" defer></script>
+  <script src="js/winterevent.js" defer></script>
 </head>
-<body>
+<body class="page-profile">
   <header class="site-header">
-    <nav class="main-nav">
-      <ul class="nav-links nav-left">
-        <li><a href="news.html">Новини</a></li>
-        <li><a href="wiki.html">Вікі</a></li>
-      </ul>
+    <nav class="main-nav" aria-label="Головна навігація">
       <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+        <span class="logo-symbol">❄</span>
         <span class="logo-text">GravenholdRP</span>
       </a>
-      <ul class="nav-links nav-right">
-        <li><a href="donate.html">Пожертви</a></li>
-        <li><a href="about.html">Про нас</a></li>
-        <li><a href="profile.html">Профіль</a></li>
-      </ul>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" data-state="closed">
+        <a href="news.html">Новини</a>
+        <a href="wiki.html">Вікі</a>
+        <a href="donate.html">Пожертви</a>
+        <a href="about.html">Про нас</a>
+        <a href="profile.html">Профіль</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-label">Темна</span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section class="auth-card">
-      <div class="auth-form">
-        <h1>Ласкаво просимо!</h1>
-        <p>Зайди до свого профілю або створи новий обліковий запис, щоб продовжити гру.</p>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="overline">Командний штаб</p>
+        <h1>Твій профіль у зимовій кампанії</h1>
+        <p>Виконуй завдання фракції, постачай ресурси та отримуй звання у реалістичному середньовічному світі без магії. Авторизація зберігається локально, щоб ти міг швидко повернутися на сервер.</p>
+      </div>
+      <div class="page-hero__badge" aria-hidden="true">
+        <span>Журнал служби</span>
+        <strong>Зима 2025</strong>
+      </div>
+    </section>
+
+    <section class="profile-layout">
+      <div class="auth-card">
+        <h2>Увійди або зареєструйся</h2>
+        <p class="auth-description">Створи обліковий запис, щоб зберігати налаштування персонажа, фракцію та історію кампаній на цьому пристрої.</p>
         <div id="authStatus" class="auth-status" role="alert" aria-live="polite"></div>
-        <form id="authForm">
-          <div class="form-group">
+        <form id="authForm" class="auth-form">
+          <div class="form-field">
             <label for="username">Нікнейм</label>
-            <input id="username" name="username" type="text" placeholder="Ваш нік" required>
+            <input id="username" name="username" type="text" placeholder="Вкажи нікнейм" required>
           </div>
-          <div class="form-group">
+          <div class="form-field">
             <label for="password">Пароль</label>
-            <input id="password" name="password" type="password" placeholder="Секретне слово" required>
+            <input id="password" name="password" type="password" placeholder="Вигадай пароль" required>
           </div>
-          <button class="primary-btn" type="submit">Увійти</button>
+          <button class="cta-button primary" type="submit">Увійти</button>
         </form>
-        <div class="switch-auth">
+        <div class="auth-switch">
           <span id="authModeLabel">Немає акаунта?</span>
           <button type="button" id="switchAuthBtn">Зареєструватися</button>
         </div>
       </div>
 
-      <div class="profile-panel" id="profilePanel">
-        <h2 id="welcomeMessage">Привіт, герой!</h2>
-        <p>Твій профіль збережено на цьому пристрої. Продовжуй пригоду, обирай фракції та відстежуй прогрес у вікі.</p>
-        <button class="logout-btn" type="button" id="logoutBtn">Вийти</button>
-      </div>
+      <aside class="profile-panel locked" id="profilePanel" aria-live="polite" aria-hidden="true">
+        <header class="profile-header">
+          <div class="profile-rank">
+            <span class="rank-label">Ранг</span>
+            <strong class="rank-value">Дружинник</strong>
+          </div>
+          <div class="profile-faction">
+            <span class="faction-label">Фракція</span>
+            <strong class="faction-value">Слов’яни</strong>
+          </div>
+        </header>
+        <div class="profile-summary">
+          <h3 id="welcomeMessage">Привіт, мандрівнику!</h3>
+          <p>Керуй запасами, виконуй зимові завдання та підтримуй союзників. Тут зберігаються твої ключові показники прогресу.</p>
+        </div>
+        <div class="stats-grid" role="list">
+          <div class="stat-card" role="listitem">
+            <div class="radial-progress" data-progress="68">
+              <span class="radial-value">68%</span>
+            </div>
+            <p>Готовність гарнізону</p>
+          </div>
+          <div class="stat-card" role="listitem">
+            <div class="radial-progress" data-progress="54">
+              <span class="radial-value">54%</span>
+            </div>
+            <p>Постачання ресурсів</p>
+          </div>
+          <div class="stat-card" role="listitem">
+            <div class="radial-progress" data-progress="82">
+              <span class="radial-value">82%</span>
+            </div>
+            <p>Репутація фракції</p>
+          </div>
+        </div>
+        <div class="bars-grid">
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>Логістика</span>
+              <span class="bar-value" data-bar="74">74%</span>
+            </div>
+            <div class="progress-bar"><span></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>Вправність у бою</span>
+              <span class="bar-value" data-bar="88">88%</span>
+            </div>
+            <div class="progress-bar"><span></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label">
+              <span>Дипломатія</span>
+              <span class="bar-value" data-bar="61">61%</span>
+            </div>
+            <div class="progress-bar"><span></span></div>
+          </div>
+        </div>
+        <button class="logout-btn" type="button" id="logoutBtn">Вийти з профілю</button>
+      </aside>
     </section>
   </main>
 
-  <footer>
-    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  <footer class="site-footer">
+    <p>© GravenholdRP 2025 · <a href="https://discord.gg/" target="_blank" rel="noopener">Наш Discord</a></p>
   </footer>
 </body>
 </html>
