@@ -23,6 +23,11 @@ html.winter-event .experience-copy,
 html.winter-event .experience-visual,
 html.winter-event .timeline-item,
 html.winter-event .join-grid,
+html.winter-event .hero-content,
+html.winter-event .faction-card,
+html.winter-event .experience-copy,
+html.winter-event .timeline-body,
+html.winter-event .join-card,
 html.winter-event .auth-card,
 html.winter-event .profile-panel,
 html.winter-event .tier-card,
@@ -36,6 +41,14 @@ html.winter-event .dispatch-card,
 html.winter-event .accordion-item,
 html.winter-event .news-template,
 html.winter-event .page-hero {
+html.winter-event .contact-card,
+html.winter-event .news-card,
+html.winter-event .wiki-hero__content,
+html.winter-event .accordion-item,
+html.winter-event .about-hero__content,
+html.winter-event .donate-hero__content,
+html.winter-event .news-template,
+html.winter-event .page-hero__content {
   box-shadow: 0 24px 60px rgba(35, 60, 90, 0.55), 0 0 28px rgba(93, 228, 255, 0.25);
 }
 

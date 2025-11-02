@@ -18,6 +18,48 @@
 .page-news .page-hero__badge {
   position: relative;
   z-index: 1;
+.news-hero {
+  position: relative;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+  padding-block: 110px 80px;
+}
+
+.news-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;
+  filter: saturate(0.75) brightness(0.45);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.news-hero__content {
+  position: relative;
+  max-width: 680px;
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 22%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.news-hero__content h1 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 16px;
+}
+
+.news-hero__content p {
+  color: var(--text-muted);
+}
+
+.news-stream {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
 }
 
 .news-stream .news-grid {
@@ -90,6 +132,39 @@
   padding: clamp(28px, 4vw, 36px);
   display: grid;
   gap: 16px;
+  background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.news-card:hover,
+.news-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+}
+
+.news-media {
+  height: 180px;
+  background: radial-gradient(circle at top, rgba(75, 213, 255, 0.32), transparent 70%);
+  position: relative;
+}
+
+.news-card[data-faction='vikings'] .news-media {
+  background-image: linear-gradient(135deg, rgba(13, 31, 51, 0.9), rgba(58, 112, 140, 0.6));
+}
+
+.news-card[data-faction='slavs'] .news-media {
+  background-image: linear-gradient(135deg, rgba(24, 54, 41, 0.9), rgba(86, 132, 109, 0.6));
+}
+
+.news-card[data-faction='byzantines'] .news-media {
+  background-image: linear-gradient(135deg, rgba(32, 38, 70, 0.9), rgba(95, 103, 149, 0.6));
+}
+
+.news-body {
+  padding: 28px;
+  display: grid;
+  gap: 12px;
   color: var(--text-muted);
 }
 
@@ -200,5 +275,61 @@
 @media (max-width: 720px) {
   .news-stream .news-grid {
     grid-template-columns: 1fr;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent-cyan) 65%, transparent);
+}
+
+.news-body h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+  color: var(--text-main);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.news-body p {
+  margin: 0;
+}
+
+.news-link {
+  align-self: start;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.dispatches {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+}
+
+.dispatch-head {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.news-template {
+  background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+  overflow-x: auto;
+  color: var(--accent-cyan);
+}
+
+.news-template code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .news-hero__content {
+    padding: 32px;
   }
 }

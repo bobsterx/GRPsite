@@ -22,6 +22,38 @@
 .wiki-sections .accordion-grid {
   display: grid;
   gap: var(--grid-gap);
+.wiki-hero {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+  padding-block: 120px 60px;
+}
+
+.wiki-hero__content {
+  background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.wiki-hero__content h1 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.wiki-hero__content p {
+  color: var(--text-muted);
+}
+
+.wiki-grid {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+  display: grid;
+  gap: 24px;
 }
 
 .accordion-item {
@@ -29,12 +61,16 @@
   border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
   background: color-mix(in srgb, var(--bg-surface-strong) 85%, transparent);
   box-shadow: var(--shadow-card);
+  background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
 
 .accordion-header {
   width: 100%;
   padding: clamp(26px, 4vw, 34px);
+  padding: 24px 32px;
   background: transparent;
   border: none;
   color: inherit;
@@ -45,6 +81,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-family: var(--font-display);
+  font-family: var(--font-heading);
 }
 
 .accordion-header h2 {
@@ -56,6 +93,13 @@
   font-size: 1.6rem;
   color: var(--accent-cyan);
   transition: transform var(--transition-base);
+  font-size: 1.3rem;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  transition: transform var(--transition-base);
+  color: var(--accent-cyan);
 }
 
 .accordion-item.active .toggle-icon {
@@ -67,12 +111,16 @@
   overflow: hidden;
   transition: max-height 0.5s ease;
   padding: 0 clamp(26px, 4vw, 34px);
+  padding: 0 32px;
   color: var(--text-muted);
 }
 
 .accordion-body.active {
   max-height: 520px;
   padding-bottom: clamp(26px, 4vw, 34px);
+  padding-bottom: 28px;
+  padding-top: 0;
+  max-height: 480px;
 }
 
 .accordion-body p {
@@ -80,11 +128,13 @@
 }
 
 .fact-list {
+  margin: 18px 0 0;
+  padding: 0;
   list-style: none;
   margin: 24px 0 0;
   padding: 0;
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .fact-list li {
@@ -98,6 +148,20 @@
 @media (max-width: 720px) {
   .accordion-header {
     padding: 22px 24px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--bg-surface) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+  color: var(--text-main);
+}
+
+@media (max-width: 720px) {
+  .wiki-hero__content {
+    padding: 32px;
+  }
+
+  .accordion-header {
+    padding: 20px 24px;
   }
 
   .accordion-body {

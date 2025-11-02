@@ -24,9 +24,54 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--grid-gap);
+.donate-hero {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+  padding-block: 120px 60px;
+}
+
+.donate-hero__content {
+  background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+  box-shadow: var(--shadow-soft);
+  max-width: 720px;
+}
+
+.donate-hero__content h1 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.donate-hero__content p {
+  color: var(--text-muted);
+}
+
+.tiers {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
 }
 
 .tier-card {
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: linear-gradient(140deg, rgba(8, 18, 32, 0.85), rgba(5, 14, 26, 0.7));
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 24px;
+  color: var(--text-muted);
   position: relative;
   border-radius: var(--radius-lg);
   border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
@@ -38,7 +83,7 @@
   overflow: hidden;
 }
 
-.tier-card::before {
+.tier-card::after {
   content: '';
   position: absolute;
   inset: -25% -15% auto;
@@ -54,6 +99,22 @@
   justify-content: space-between;
   gap: 12px;
   align-items: baseline;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(75, 213, 255, 0.35), transparent 65%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.tier-card:hover::after,
+.tier-card:focus-within::after {
+  opacity: 1;
+}
+
+.tier-card header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .tier-card h3 {
@@ -69,6 +130,16 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
+  font-family: var(--font-heading);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.tier-price {
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.12em;
 }
 
 .tier-benefits {
@@ -83,6 +154,10 @@
 
 .tier-benefits li {
   padding-left: 24px;
+}
+
+.tier-benefits li {
+  padding-left: 20px;
   position: relative;
 }
 
@@ -102,6 +177,23 @@
   border: 1px solid color-mix(in srgb, var(--accent-cyan) 22%, transparent);
   background: transparent;
   color: var(--text-color);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(75, 213, 255, 0.6);
+}
+
+.support-btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+  background: transparent;
+  color: var(--text-main);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -133,6 +225,42 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.support-btn:hover,
+.support-btn:focus-visible {
+  border-color: var(--accent-cyan);
+  box-shadow: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.donate-note {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+}
+
+.note-card {
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 42px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  display: grid;
+  gap: 18px;
+  color: var(--text-muted);
+}
+
+.note-card h2 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: 0;
+  color: var(--text-main);
 }
 
 .note-foot {
@@ -150,5 +278,13 @@
 @media (max-width: 760px) {
   .donate-tiers .tier-grid {
     grid-template-columns: 1fr;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .donate-hero__content,
+  .note-card {
+    padding: 32px;
   }
 }

@@ -126,6 +126,137 @@
   border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
   background: color-mix(in srgb, var(--bg-surface-strong) 85%, transparent);
   box-shadow: var(--shadow-card);
+.about-hero {
+  position: relative;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+  padding-block: 120px 80px;
+}
+
+.about-hero__background {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1526406915894-7bcd65f60845?auto=format&fit=crop&w=1600&q=80') center/cover;
+  filter: saturate(0.7) brightness(0.5);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-hero__content {
+  position: relative;
+  max-width: 640px;
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 22%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.about-hero__content h1 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+}
+
+.about-hero__content p {
+  color: var(--text-muted);
+}
+
+.heritage {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+}
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.heritage-card {
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  background: color-mix(in srgb, var(--bg-elevated) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  box-shadow: var(--shadow-soft);
+  color: var(--text-muted);
+  position: relative;
+}
+
+.heritage-card h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.team {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+}
+
+.team-header {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.team-card {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: linear-gradient(135deg, rgba(7, 16, 30, 0.8), rgba(10, 18, 32, 0.6));
+  box-shadow: var(--shadow-soft);
+  color: var(--text-muted);
+  display: grid;
+  gap: 12px;
+}
+
+.team-card h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.team-role {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: var(--accent-cyan);
+}
+
+.contact {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding-inline: calc((100vw - var(--layout-max-width)) / 2);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.contact-card {
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-elevated) 85%, transparent);
+  box-shadow: var(--shadow-soft);
   color: var(--text-muted);
 }
 
@@ -134,6 +265,12 @@
   font-family: var(--font-display);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-top: 0;
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: var(--text-main);
 }
 
 .contact-card a {
@@ -158,5 +295,10 @@
   .about-heritage .heritage-grid,
   .values-grid {
     grid-template-columns: 1fr;
+}
+
+@media (max-width: 720px) {
+  .about-hero__content {
+    padding: 32px;
   }
 }

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
   const submitBtn = form?.querySelector('button[type="submit"]');
+  const submitBtn = form?.querySelector('.cta-button');
   const switchBtn = document.getElementById('switchAuthBtn');
   const authModeLabel = document.getElementById('authModeLabel');
   const authStatus = document.getElementById('authStatus');
@@ -110,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     radialItems.forEach((item) => {
       const value = Number(item.dataset.progress) || 0;
       item.style.setProperty('--progress', Math.max(0, Math.min(100, value)));
+      item.style.setProperty('--progress', `${Math.max(0, Math.min(100, value))}%`);
       const valueEl = item.querySelector('.radial-value');
       if (valueEl) {
         valueEl.textContent = `${value}%`;
