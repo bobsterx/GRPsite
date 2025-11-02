@@ -17,6 +17,12 @@ html.winter-event .site-header {
   box-shadow: 0 18px 50px rgba(0, 30, 50, 0.55);
 }
 
+html.winter-event .hero-intro,
+html.winter-event .faction-card,
+html.winter-event .experience-copy,
+html.winter-event .experience-visual,
+html.winter-event .timeline-item,
+html.winter-event .join-grid,
 html.winter-event .hero-content,
 html.winter-event .faction-card,
 html.winter-event .experience-copy,
@@ -28,6 +34,13 @@ html.winter-event .tier-card,
 html.winter-event .note-card,
 html.winter-event .team-card,
 html.winter-event .heritage-card,
+html.winter-event .values-card,
+html.winter-event .contact-card,
+html.winter-event .news-card,
+html.winter-event .dispatch-card,
+html.winter-event .accordion-item,
+html.winter-event .news-template,
+html.winter-event .page-hero {
 html.winter-event .contact-card,
 html.winter-event .news-card,
 html.winter-event .wiki-hero__content,

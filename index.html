@@ -14,6 +14,69 @@
 </head>
 <body class="page-home">
   <header class="site-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+          <span class="logo-symbol">✧</span>
+          <span class="logo-text">GravenholdRP</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" data-state="closed">
+          <a href="news.html">Новини</a>
+          <a href="wiki.html">Вікі</a>
+          <a href="donate.html">Пожертви</a>
+          <a href="about.html">Про нас</a>
+          <a href="profile.html">Профіль</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Темна</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-intro">
+          <p class="overline">Зимова кампанія 2025</p>
+          <h1 class="hero-title">GravenholdRP — світ реалістичних легенд</h1>
+          <p class="hero-text">Приєднуйся до середньовічної ролівки без магії. Дипломатія, зведення фортець, морські походи та виживання під час суворої зими — твоя фракція визначає долю материка.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="profile.html">Розпочати шлях</a>
+            <a class="button-ghost" href="wiki.html">Дослідити хроніки</a>
+          </div>
+          <div class="hero-metrics" role="list">
+            <div class="metric" role="listitem">
+              <span class="metric-value">3</span>
+              <span class="metric-label">фракції зі своїми законами</span>
+            </div>
+            <div class="metric" role="listitem">
+              <span class="metric-value">12</span>
+              <span class="metric-label">поселень та фортів</span>
+            </div>
+            <div class="metric" role="listitem">
+              <span class="metric-value">24/7</span>
+              <span class="metric-label">чергування модераторів</span>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-visual" aria-hidden="true">
+          <div class="hero-badge">
+            <span>Головний штаб</span>
+            <strong>Зима 2025</strong>
+          </div>
+          <p>Льодові вали, замкнені порти та дефіцит металу. Команди гравців узгоджують конвої, охороняють склади та планують зимові рейди проти ворогів.</p>
+          <footer>
+            <span>Координаційна рада</span>
+            <span>Синій факел</span>
+          </footer>
+        </aside>
     <nav class="main-nav" aria-label="Головна навігація">
       <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
         <span class="logo-symbol">❄</span>
@@ -69,6 +132,62 @@
       </div>
     </section>
 
+    <section class="faction-section section-gap" aria-labelledby="faction-title">
+      <div class="container">
+        <p class="overline">Фракції</p>
+        <h2 id="faction-title" class="section-title">Обери сторону у зимовій боротьбі</h2>
+        <p class="section-lead">Кожна фракція GravenholdRP дотримується історичних традицій, веде власну економіку та вибудовує стратегію виживання під час тривалих морозів.</p>
+        <div class="faction-grid">
+          <article class="faction-card reveal-on-scroll">
+            <header>
+              <h3>Вікінги</h3>
+              <span class="faction-tag">Північні береги</span>
+            </header>
+            <p>Морські походи, рейди та кування сталі. Вікінги тримають прибережні верфі, збирають данину і славляться дисципліною у бою.</p>
+            <ul class="faction-stats">
+              <li><span>Військова міць</span><span>85%</span></li>
+              <li><span>Морська торгівля</span><span>70%</span></li>
+              <li><span>Мораль екіпажів</span><span>92%</span></li>
+            </ul>
+          </article>
+          <article class="faction-card reveal-on-scroll">
+            <header>
+              <h3>Слов’яни</h3>
+              <span class="faction-tag">Лісові князівства</span>
+            </header>
+            <p>Громади майстрів, родові дружини та розгалужена логістика. Слов’яни тримають оборону брам, підтримують поселення та зміцнюють дипломатію.</p>
+            <ul class="faction-stats">
+              <li><span>Економіка</span><span>88%</span></li>
+              <li><span>Захист кордонів</span><span>82%</span></li>
+              <li><span>Підтримка громади</span><span>95%</span></li>
+            </ul>
+          </article>
+          <article class="faction-card reveal-on-scroll">
+            <header>
+              <h3>Візантійці</h3>
+              <span class="faction-tag">Міські держави</span>
+            </header>
+            <p>Фортифікації, дипломатія і торгівля через Чорне море. Візантійці контролюють каравани, впроваджують закони та утримують стратегічні бази.</p>
+            <ul class="faction-stats">
+              <li><span>Архітектура</span><span>93%</span></li>
+              <li><span>Дипломатія</span><span>89%</span></li>
+              <li><span>Скарбниця</span><span>91%</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-section section-gap" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="experience-copy">
+          <p class="overline">Ігровий досвід</p>
+          <h2 id="experience-title" class="section-title">Реалістичні механіки та зимові випробування</h2>
+          <p class="section-lead">Сервер побудований на ручних сценаріях, історичному оснащенні та складній логістиці. Взимку потрібно обігрівати табори, постачати дрова й укріплювати склади, щоб фракція витримала облогу.</p>
+          <ul class="feature-list">
+            <li>Історичні кампанії без магії: дипломатія, штурми та захист конвоїв.</li>
+            <li>Господарська система з податками, гільдіями ремісників і ринками.</li>
+            <li>Репутація між фракціями, зимові бонуси та сезонні податкові збори.</li>
     <section class="faction-showcase" aria-labelledby="faction-title">
       <div class="section-intro">
         <p class="overline">Фракції</p>
@@ -129,6 +248,65 @@
         </div>
         <div class="experience-visual" aria-hidden="true">
           <div class="frost-frame">
+            <div class="frost-content">
+              <span class="frost-label">Звіт з фронтів</span>
+              <p>Січень 2025 · Форт Хольм — Слов’яни утримують лісову браму, Візантійці ведуть переговори про зерно, Вікінги контролюють припортові верфі та підтримують флот.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section section-gap" aria-labelledby="timeline-title">
+      <div class="container">
+        <p class="overline">Хроніки</p>
+        <h2 id="timeline-title" class="section-title">Останні події GravenholdRP</h2>
+        <ol class="timeline-list">
+          <li class="timeline-item reveal-on-scroll">
+            <div class="timeline-date">Березень 2025</div>
+            <div class="timeline-body">
+              <h3>Оборона Студеної протоки</h3>
+              <p>Флот Вікінгів супроводжує торгові судна через замерзлу затоку. Вдалий рейд зменшує вартість металу на всіх ринках материка.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-on-scroll">
+            <div class="timeline-date">Лютий 2025</div>
+            <div class="timeline-body">
+              <h3>Слов’янський зимовий віче</h3>
+              <p>Князі ухвалюють новий податковий кодекс. Фракція отримує бонуси до розвитку поселень і підтримку ремісничих цехів.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal-on-scroll">
+            <div class="timeline-date">Січень 2025</div>
+            <div class="timeline-body">
+              <h3>Караван Візантійців</h3>
+              <p>Озброєна варта супроводжує зернові каравани до північних складів. Успішна операція відкриває дипломатичне вікно для перемир’я.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="join-section section-gap" aria-labelledby="join-title">
+      <div class="container">
+        <div class="join-grid">
+          <div>
+            <p class="overline">Як долучитися</p>
+            <h2 id="join-title" class="section-title">Підготуйся до служби у GravenholdRP</h2>
+            <p class="section-lead">Сформуй свою дружину, віднови спорядження та увійди до Discord-ради, щоб отримувати оперативні накази під час зимової кампанії.</p>
+            <ul class="join-checklist">
+              <li>Заповни заявку у Discord та обери фракцію.</li>
+              <li>Підготуй рольову біографію, що відповідає історичному канону.</li>
+              <li>Приєднайся до тренувань фракції та отримай рекомендації старших.</li>
+            </ul>
+            <div class="hero-actions" style="margin-top:32px;">
+              <a class="button-primary" href="https://discord.gg/" target="_blank" rel="noopener">Вступити у Discord</a>
+              <a class="button-ghost" href="news.html">Читайте останні накази</a>
+            </div>
+          </div>
+          <div class="join-visual" aria-hidden="true">
+            <span>Мапа зимового походу</span>
+          </div>
             <div class="frost-glow"></div>
             <div class="frost-content">
               <span class="frost-label">Звіт з фронтів</span>
@@ -182,6 +360,30 @@
   </main>
 
   <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo-link" href="index.html">
+            <span class="logo-symbol">✧</span>
+            <span class="logo-text">GravenholdRP</span>
+          </a>
+          <p>Реалістичний середньовічний світ Minecraft без магії. Зимові кампанії, фракційні союзи та історичні сценарії.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Навігація у футері">
+          <a href="news.html">Звіт новин</a>
+          <a href="wiki.html">Хроніки</a>
+          <a href="donate.html">Підтримка</a>
+          <a href="about.html">Про проєкт</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Сервер онлайн 24/7</span>
+          <a href="profile.html">Панель профілю</a>
+          <a href="https://discord.gg/" target="_blank" rel="noopener">Discord-рада</a>
+          <a href="mailto:gravenholdrp@gmail.com">gravenholdrp@gmail.com</a>
+        </div>
+      </div>
+      <small>© GravenholdRP 2025. Усі права захищено.</small>
+    </div>
     <p>© GravenholdRP 2025 · <a href="https://discord.gg/" target="_blank" rel="noopener">Наш Discord</a></p>
   </footer>
 </body>

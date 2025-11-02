@@ -16,6 +16,42 @@
 </head>
 <body class="page-profile">
   <header class="site-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+          <span class="logo-symbol">✧</span>
+          <span class="logo-text">GravenholdRP</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" data-state="closed">
+          <a href="news.html">Новини</a>
+          <a href="wiki.html">Вікі</a>
+          <a href="donate.html">Пожертви</a>
+          <a href="about.html">Про нас</a>
+          <a href="profile.html">Профіль</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Темна</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero profile-hero">
+      <div class="page-hero__content">
+        <p class="overline">Командний штаб</p>
+        <h1>Твій профіль у зимовій кампанії</h1>
+        <p>Виконуй завдання фракції, постачай ресурси й отримуй звання у реалістичному світі без магії. Авторизація зберігається локально, щоб ти міг швидко повернутися на сервер.</p>
+      </div>
+      <div class="page-hero__badge">
+        <span>Журнал служби</span>
+        <strong>Зима 2025</strong>
     <nav class="main-nav" aria-label="Головна навігація">
       <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
         <span class="logo-symbol">❄</span>
@@ -74,7 +110,94 @@
           <button type="button" id="switchAuthBtn">Зареєструватися</button>
         </div>
       </div>
+    </section>
 
+    <section class="section-gap profile-layout">
+      <div class="container">
+        <div class="profile-grid">
+          <div class="auth-card">
+            <h2>Увійди або зареєструйся</h2>
+            <p class="auth-description">Створи обліковий запис, щоб зберігати налаштування персонажа, фракцію та історію кампаній на цьому пристрої.</p>
+            <div id="authStatus" class="auth-status" role="alert" aria-live="polite"></div>
+            <form id="authForm" class="auth-form">
+              <div class="form-field">
+                <label for="username">Нікнейм</label>
+                <input id="username" name="username" type="text" placeholder="Вкажи нікнейм" required>
+              </div>
+              <div class="form-field">
+                <label for="password">Пароль</label>
+                <input id="password" name="password" type="password" placeholder="Вигадай пароль" required>
+              </div>
+              <button class="button-primary" type="submit">Увійти</button>
+            </form>
+            <div class="auth-switch">
+              <span id="authModeLabel">Немає акаунта?</span>
+              <button type="button" id="switchAuthBtn">Зареєструватися</button>
+            </div>
+          </div>
+
+          <aside class="profile-panel locked" id="profilePanel" aria-live="polite" aria-hidden="true">
+            <header class="profile-header">
+              <div class="profile-rank">
+                <span class="rank-label">Ранг</span>
+                <strong class="rank-value">Дружинник</strong>
+              </div>
+              <div class="profile-faction">
+                <span class="faction-label">Фракція</span>
+                <strong class="faction-value">Слов’яни</strong>
+              </div>
+            </header>
+            <div class="profile-summary">
+              <h3 id="welcomeMessage">Привіт, мандрівнику!</h3>
+              <p>Керуй запасами, виконуй зимові завдання та підтримуй союзників. Тут зберігаються ключові показники твого прогресу.</p>
+            </div>
+            <div class="stats-grid" role="list">
+              <div class="stat-card" role="listitem">
+                <div class="radial-progress" data-progress="68">
+                  <span class="radial-value">68%</span>
+                </div>
+                <p>Готовність гарнізону</p>
+              </div>
+              <div class="stat-card" role="listitem">
+                <div class="radial-progress" data-progress="54">
+                  <span class="radial-value">54%</span>
+                </div>
+                <p>Постачання ресурсів</p>
+              </div>
+              <div class="stat-card" role="listitem">
+                <div class="radial-progress" data-progress="82">
+                  <span class="radial-value">82%</span>
+                </div>
+                <p>Репутація фракції</p>
+              </div>
+            </div>
+            <div class="bars-grid">
+              <div class="bar-item">
+                <div class="bar-label">
+                  <span>Логістика</span>
+                  <span class="bar-value" data-bar="74">74%</span>
+                </div>
+                <div class="progress-bar"><span></span></div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-label">
+                  <span>Вправність у бою</span>
+                  <span class="bar-value" data-bar="88">88%</span>
+                </div>
+                <div class="progress-bar"><span></span></div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-label">
+                  <span>Дипломатія</span>
+                  <span class="bar-value" data-bar="61">61%</span>
+                </div>
+                <div class="progress-bar"><span></span></div>
+              </div>
+            </div>
+            <button class="logout-btn" type="button" id="logoutBtn">Вийти з профілю</button>
+          </aside>
+        </div>
+      </div>
       <aside class="profile-panel locked" id="profilePanel" aria-live="polite" aria-hidden="true">
         <header class="profile-header">
           <div class="profile-rank">
@@ -139,6 +262,30 @@
   </main>
 
   <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo-link" href="index.html">
+            <span class="logo-symbol">✧</span>
+            <span class="logo-text">GravenholdRP</span>
+          </a>
+          <p>Реалістичний середньовічний світ Minecraft без магії. Зимові кампанії, фракційні союзи та історичні сценарії.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Навігація у футері">
+          <a href="news.html">Звіт новин</a>
+          <a href="wiki.html">Хроніки</a>
+          <a href="donate.html">Підтримка</a>
+          <a href="about.html">Про проєкт</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Сервер онлайн 24/7</span>
+          <a href="https://discord.gg/" target="_blank" rel="noopener">Discord-рада</a>
+          <a href="mailto:gravenholdrp@gmail.com">gravenholdrp@gmail.com</a>
+          <a href="profile.html">Панель профілю</a>
+        </div>
+      </div>
+      <small>© GravenholdRP 2025. Усі права захищено.</small>
+    </div>
     <p>© GravenholdRP 2025 · <a href="https://discord.gg/" target="_blank" rel="noopener">Наш Discord</a></p>
   </footer>
 </body>

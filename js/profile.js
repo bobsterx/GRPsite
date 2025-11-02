@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('authForm');
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
+  const submitBtn = form?.querySelector('button[type="submit"]');
   const submitBtn = form?.querySelector('.cta-button');
   const switchBtn = document.getElementById('switchAuthBtn');
   const authModeLabel = document.getElementById('authModeLabel');
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const radialItems = profilePanel.querySelectorAll('.radial-progress');
     radialItems.forEach((item) => {
       const value = Number(item.dataset.progress) || 0;
+      item.style.setProperty('--progress', Math.max(0, Math.min(100, value)));
       item.style.setProperty('--progress', `${Math.max(0, Math.min(100, value))}%`);
       const valueEl = item.querySelector('.radial-value');
       if (valueEl) {

@@ -15,6 +15,102 @@
 </head>
 <body class="page-news">
   <header class="site-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+          <span class="logo-symbol">✧</span>
+          <span class="logo-text">GravenholdRP</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" data-state="closed">
+          <a href="news.html">Новини</a>
+          <a href="wiki.html">Вікі</a>
+          <a href="donate.html">Пожертви</a>
+          <a href="about.html">Про нас</a>
+          <a href="profile.html">Профіль</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Темна</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero news-hero">
+      <div class="page-hero__content">
+        <p class="overline">Хроніки кампанії</p>
+        <h1>Останні новини GravenholdRP</h1>
+        <p>Щотижневі звіти про військові операції, дипломатію та економіку трьох фракцій. Кожна історія побудована на реальних історичних мотивах без магії.</p>
+      </div>
+      <div class="page-hero__badge">
+        <span>Центр новин</span>
+        <strong>Вежа Сигналів</strong>
+      </div>
+    </section>
+
+    <section class="section-gap news-stream" aria-labelledby="news-title">
+      <div class="container">
+        <p class="overline">Оновлення</p>
+        <h2 id="news-title" class="section-title">Головні події тижня</h2>
+        <div class="news-grid">
+          <article class="news-card reveal-on-scroll" data-faction="vikings">
+            <div class="news-media" aria-hidden="true"></div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span>28.03.2025</span>
+                <span>Логістика</span>
+              </div>
+              <h3>Вікінги відкривають зимовий шлях</h3>
+              <p>Північні капітани прорізали лід у Студеній протоці та запустили караван металу. Ціни на зброю знижено на 12%.</p>
+              <a class="news-link" href="#">Докладніше</a>
+            </div>
+          </article>
+          <article class="news-card reveal-on-scroll" data-faction="slavs">
+            <div class="news-media" aria-hidden="true"></div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span>25.03.2025</span>
+                <span>Дипломатія</span>
+              </div>
+              <h3>Слов’яни уклали зерновий пакт</h3>
+              <p>Лісові князівства поділилися запасами зерна з Візантійцями в обмін на ковані інструменти. Фракції підвищили взаємну довіру.</p>
+              <a class="news-link" href="#">Докладніше</a>
+            </div>
+          </article>
+          <article class="news-card reveal-on-scroll" data-faction="byzantines">
+            <div class="news-media" aria-hidden="true"></div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span>22.03.2025</span>
+                <span>Оборона</span>
+              </div>
+              <h3>Візантійці посилили міські мури</h3>
+              <p>Інженери зміцнили бастіони Мезембрії. Запущено нічні патрулі та нові сигнальні вежі для оборони без магічних засобів.</p>
+              <a class="news-link" href="#">Докладніше</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gap news-reports" id="reports" aria-labelledby="reports-title">
+      <div class="container">
+        <div class="reports-head">
+          <p class="overline">Архів наказів</p>
+          <h2 id="reports-title" class="section-title">Польові зведення фракцій</h2>
+          <p class="section-lead">Використовуйте шаблон звіту, щоб швидко публікувати новини. Додайте дату, категорію та короткий опис події, що впливає на баланс сил.</p>
+        </div>
+        <div class="reports-columns">
+          <article class="dispatch-card">
+            <h3>Блискавичне оновлення</h3>
+            <p>Звіт підходить для коротких повідомлень про переміщення ресурсів або оголошення зборів.</p>
+            <pre class="news-template"><code>&lt;article class="news-card" data-faction="vikings"&gt;
     <nav class="main-nav" aria-label="Головна навігація">
       <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
         <span class="logo-symbol">❄</span>
@@ -112,10 +208,46 @@
     &lt;a class="news-link" href="#"&gt;Докладніше&lt;/a&gt;
   &lt;/div&gt;
 &lt;/article&gt;</code></pre>
+          </article>
+          <article class="dispatch-card">
+            <h3>Розширене досьє</h3>
+            <p>Розкажіть про ключові цифри, союзників і наслідки для торгівлі або військових операцій.</p>
+            <ul class="report-list">
+              <li>Дата та місце події.</li>
+              <li>Учасники і командири.</li>
+              <li>Результат та вплив на ресурси.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo-link" href="index.html">
+            <span class="logo-symbol">✧</span>
+            <span class="logo-text">GravenholdRP</span>
+          </a>
+          <p>Реалістичний середньовічний світ Minecraft без магії. Зимові кампанії, фракційні союзи та історичні сценарії.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Навігація у футері">
+          <a href="wiki.html">Хроніки</a>
+          <a href="donate.html">Підтримка</a>
+          <a href="about.html">Про проєкт</a>
+          <a href="profile.html">Панель профілю</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Сервер онлайн 24/7</span>
+          <a href="https://discord.gg/" target="_blank" rel="noopener">Discord-рада</a>
+          <a href="mailto:gravenholdrp@gmail.com">gravenholdrp@gmail.com</a>
+          <a href="news.html#reports">Архів наказів</a>
+        </div>
+      </div>
+      <small>© GravenholdRP 2025. Усі права захищено.</small>
+    </div>
     <p>© GravenholdRP 2025 · <a href="https://discord.gg/" target="_blank" rel="noopener">Наш Discord</a></p>
   </footer>
 </body>

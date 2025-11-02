@@ -16,6 +16,107 @@
 </head>
 <body class="page-wiki">
   <header class="site-header">
+    <div class="container">
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+          <span class="logo-symbol">✧</span>
+          <span class="logo-text">GravenholdRP</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" data-state="closed">
+          <a href="news.html">Новини</a>
+          <a href="wiki.html">Вікі</a>
+          <a href="donate.html">Пожертви</a>
+          <a href="about.html">Про нас</a>
+          <a href="profile.html">Профіль</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Темна</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero wiki-hero">
+      <div class="page-hero__content">
+        <p class="overline">Довідник</p>
+        <h1>Енциклопедія світу GravenholdRP</h1>
+        <p>Ознайомся з законами, економікою та традиціями трьох фракцій. Всі правила засновані на реальних середньовічних джерелах і не містять магії.</p>
+      </div>
+      <div class="page-hero__badge">
+        <span>Архів</span>
+        <strong>Кодекс зими</strong>
+      </div>
+    </section>
+
+    <section class="section-gap wiki-sections" aria-label="Розділи вікі">
+      <div class="container">
+        <div class="accordion-grid" id="wikiAccordion">
+          <article class="accordion-item active">
+            <button class="accordion-header" type="button" data-accordion="factions" aria-expanded="true" aria-controls="factions">
+              <h2>Фракції</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body active" id="factions">
+              <p>Кожна фракція має свій уклад, доступ до ресурсів та військову доктрину. Дотримуйся кодексу честі, щоб просуватися по службі.</p>
+              <ul class="fact-list">
+                <li><strong>Вікінги.</strong> Морські рейди, каравани металу й дисциплінована бойова підготовка.</li>
+                <li><strong>Слов’яни.</strong> Землеробство, ремесла та оборона поселень через віче.</li>
+                <li><strong>Візантійці.</strong> Торгівля через порти, дипломатія та розвиток міських держав.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" data-accordion="laws" aria-expanded="false" aria-controls="laws">
+              <h2>Закони</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body" id="laws">
+              <p>Закони базуються на історичних статутах і регулюють торгівлю, оборону та поведінку між фракціями.</p>
+              <ul class="fact-list">
+                <li><strong>Кодекс честі.</strong> Забороняє зрадництво, самовільні напади та порушення договорів.</li>
+                <li><strong>Рада фракцій.</strong> Щотижнева зустріч лідерів, де ухвалюються рішення про податки та союзні угоди.</li>
+                <li><strong>Міські статути.</strong> Регулюють склади, торгівлю та доступ до майстерень.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" data-accordion="economy" aria-expanded="false" aria-controls="economy">
+              <h2>Економіка</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body" id="economy">
+              <p>Економіка побудована на реальних моделях торгівлі. Каравани, податки та контракти впливають на ціни й доступ до ресурсів.</p>
+              <ul class="fact-list">
+                <li><strong>Постачання.</strong> Каравани забезпечують ресурси в зимові місяці, підтримують гарнізони та ярмарки.</li>
+                <li><strong>Контракти.</strong> Щотижневі угоди визначають обсяги зерна, металу й тканин між фракціями.</li>
+                <li><strong>Репутація.</strong> Стабільні поставки підвищують статус фракції та відкривають нові сценарії.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" data-accordion="winter" aria-expanded="false" aria-controls="winter">
+              <h2>Зимова кампанія</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body" id="winter">
+              <p>Зима 2025 додає дефіцит палива, замерзлі ріки та необхідність підтримувати теплі притулки.</p>
+              <ul class="fact-list">
+                <li><strong>Тепло.</strong> Фракції постачають дрова або вугілля до ключових форпостів.</li>
+                <li><strong>Лід.</strong> Переправи охороняються, щоб каравани не стали мішенню рейдів.</li>
+                <li><strong>Світло.</strong> Палаючі маяки та ліхтарі замінюють магію, допомагаючи орієнтуватися вночі.</li>
+              </ul>
+            </div>
+          </article>
     <nav class="main-nav" aria-label="Головна навігація">
       <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
         <span class="logo-symbol">❄</span>
@@ -108,11 +209,35 @@
             <li><strong>Світло.</strong> Палаючі маяки та ліхтарі замінюють магію, допомагаючи орієнтуватися вночі.</li>
           </ul>
         </div>
-      </article>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo-link" href="index.html">
+            <span class="logo-symbol">✧</span>
+            <span class="logo-text">GravenholdRP</span>
+          </a>
+          <p>Реалістичний середньовічний світ Minecraft без магії. Зимові кампанії, фракційні союзи та історичні сценарії.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Навігація у футері">
+          <a href="news.html">Звіт новин</a>
+          <a href="donate.html">Підтримка</a>
+          <a href="about.html">Про проєкт</a>
+          <a href="profile.html">Панель профілю</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Сервер онлайн 24/7</span>
+          <a href="https://discord.gg/" target="_blank" rel="noopener">Discord-рада</a>
+          <a href="mailto:gravenholdrp@gmail.com">gravenholdrp@gmail.com</a>
+          <a href="wiki.html">Довідник</a>
+        </div>
+      </div>
+      <small>© GravenholdRP 2025. Усі права захищено.</small>
+    </div>
     <p>© GravenholdRP 2025 · <a href="https://discord.gg/" target="_blank" rel="noopener">Наш Discord</a></p>
   </footer>
 </body>

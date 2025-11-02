@@ -93,6 +93,9 @@
   function initHeroParallax() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
+    const heroIntro = hero.querySelector('.hero-intro');
+    const heroVisual = hero.querySelector('.hero-visual');
+    if (!heroIntro || !heroVisual) return;
     const heroContent = hero.querySelector('.hero-content');
     if (!heroContent) return;
 
@@ -107,6 +110,9 @@
 
       cancelAnimationFrame(frameId);
       frameId = requestAnimationFrame(() => {
+        heroIntro.style.setProperty('--tiltX', `${-x * 4}deg`);
+        heroIntro.style.setProperty('--tiltY', `${y * 3}deg`);
+        heroVisual.style.setProperty('--parallax', `${y * 20}px`);
         hero.style.setProperty('--tiltX', `${-x * 4}deg`);
         hero.style.setProperty('--tiltY', `${y * 3}deg`);
       });
@@ -114,6 +120,9 @@
 
     hero.addEventListener('mouseleave', () => {
       cancelAnimationFrame(frameId);
+      heroIntro.style.setProperty('--tiltX', '0deg');
+      heroIntro.style.setProperty('--tiltY', '0deg');
+      heroVisual.style.setProperty('--parallax', '0px');
       hero.style.setProperty('--tiltX', '0deg');
       hero.style.setProperty('--tiltY', '0deg');
     });

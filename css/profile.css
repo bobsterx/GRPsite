@@ -1,3 +1,259 @@
+.page-profile .page-hero {
+  background: linear-gradient(140deg, rgba(12, 24, 38, 0.9), rgba(12, 24, 38, 0.55));
+  position: relative;
+  overflow: hidden;
+}
+
+.page-profile .page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1526404428533-89dba3cb3015?auto=format&fit=crop&w=1800&q=80') center/cover;
+  opacity: 0.45;
+  mix-blend-mode: screen;
+}
+
+.page-profile .page-hero__content,
+.page-profile .page-hero__badge {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-layout .profile-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--grid-gap);
+}
+
+.auth-card,
+.profile-panel {
+  border-radius: var(--radius-xl);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-surface-strong) 88%, transparent);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(36px, 4vw, 48px);
+  position: relative;
+}
+
+.auth-card.hidden {
+  display: none;
+}
+
+.auth-card h2 {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.auth-description {
+  margin: 0 0 24px;
+  color: var(--text-muted);
+}
+
+.auth-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.form-field input {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
+  color: var(--text-color);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: var(--glow);
+}
+
+.auth-status {
+  min-height: 24px;
+  font-size: 0.9rem;
+}
+
+.auth-status.error {
+  color: #ff7a7a;
+}
+
+.auth-status.success {
+  color: #74ffc6;
+}
+
+.auth-switch {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  color: var(--text-muted);
+}
+
+.auth-switch button {
+  background: none;
+  border: none;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.profile-panel {
+  display: grid;
+  gap: 24px;
+  opacity: 0.45;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(14px);
+}
+
+.profile-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px dashed color-mix(in srgb, var(--accent-cyan) 35%, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.profile-panel.locked::before {
+  opacity: 1;
+}
+
+.profile-panel.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.profile-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 18px;
+}
+
+.profile-rank,
+.profile-faction {
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-surface) 88%, transparent);
+  padding: 18px 22px;
+}
+
+.rank-label,
+.faction-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.rank-value,
+.faction-value {
+  display: block;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+.profile-summary h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-summary p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat-card {
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-surface) 88%, transparent);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+  text-align: center;
+}
+
+.radial-progress {
+  --progress: 0;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent-cyan) calc(var(--progress, 0) * 3.6deg), rgba(255, 255, 255, 0.08) 0);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: background 0.6s ease;
+}
+
+.radial-progress::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg-surface-strong) 92%, transparent);
+}
+
+.radial-value {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.bars-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.bar-item {
+  display: grid;
+  gap: 12px;
+}
+
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.progress-bar {
 .page-hero {
   max-width: var(--layout-max-width);
   margin: 0 auto;
@@ -298,6 +554,25 @@
 
 .progress-bar span {
   display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(85, 216, 255, 0.8), rgba(85, 216, 255, 0.45));
+  width: 0;
+  transition: width 0.6s ease;
+}
+
+.logout-btn {
+  justify-self: start;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 22%, transparent);
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
   width: 0%;
   height: 100%;
   border-radius: inherit;
@@ -321,6 +596,25 @@
 
 .logout-btn:hover,
 .logout-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--glow);
+}
+
+@media (max-width: 1080px) {
+  .profile-layout .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .profile-panel,
+  .auth-card {
+    padding: 32px;
   border-color: var(--accent-cyan);
   transform: translateY(-2px);
   box-shadow: var(--accent-glow);
