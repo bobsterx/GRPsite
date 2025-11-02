@@ -1,88 +1,150 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вікі GravenholdRP — Фракції, міста та економіка</title>
-  <meta name="description" content="Переглянь повний довідник світу GravenholdRP: фракції, міста, закони та економіка рольового серверу Minecraft 1.20.1.">
+  <title>Вікі GravenholdRP — Реалістичний довідник світу</title>
+  <meta name="description" content="Довідник GravenholdRP: фракції Вікінгів, Слов’ян і Візантійців, закони та економіка реалістичного середньовічного світу Minecraft без магії.">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/wiki.css">
+  <link rel="stylesheet" href="css/winterevent.css">
   <script src="js/main.js" defer></script>
   <script src="js/wiki.js" defer></script>
+  <script src="js/winterevent.js" defer></script>
 </head>
-<body>
+<body class="page-wiki">
   <header class="site-header">
-    <nav class="main-nav">
-      <ul class="nav-links nav-left">
-        <li><a href="news.html">Новини</a></li>
-        <li><a href="wiki.html">Вікі</a></li>
-      </ul>
-      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
-        <span class="logo-text">GravenholdRP</span>
-      </a>
-      <ul class="nav-links nav-right">
-        <li><a href="donate.html">Пожертви</a></li>
-        <li><a href="about.html">Про нас</a></li>
-        <li><a href="profile.html">Профіль</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+          <span class="logo-symbol">✧</span>
+          <span class="logo-text">GravenholdRP</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" data-state="closed">
+          <a href="news.html">Новини</a>
+          <a href="wiki.html">Вікі</a>
+          <a href="donate.html">Пожертви</a>
+          <a href="about.html">Про нас</a>
+          <a href="profile.html">Профіль</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Темна</span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <header class="page-header">
-      <h1>Енциклопедія світу GravenholdRP</h1>
-      <p>Перед тим як зануритись у роль, вивчи історію фракцій, закони міських держав і секрети економіки. Натисни на будь-який розділ, щоб розкрити деталі.</p>
-    </header>
+    <section class="page-hero wiki-hero">
+      <div class="page-hero__content">
+        <p class="overline">Довідник</p>
+        <h1>Енциклопедія світу GravenholdRP</h1>
+        <p>Ознайомся з законами, економікою та традиціями трьох фракцій. Всі правила засновані на реальних середньовічних джерелах і не містять магії.</p>
+      </div>
+      <div class="page-hero__badge">
+        <span>Архів</span>
+        <strong>Кодекс зими</strong>
+      </div>
+    </section>
 
-    <section class="wiki-grid">
-      <article class="accordion-item active">
-        <button class="accordion-header" type="button" data-accordion="fractions" aria-expanded="true" aria-controls="fractions">
-          <h2>Фракції</h2>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="accordion-body active" id="fractions">
-          <p>У GravenholdRP існує шість ключових фракцій. Кожна має власний сюжет, внутрішні правила та систему підвищення рангу. Порушення кодексу карається позбавленням титулів.</p>
-          <ul class="fact-list">
-            <li><strong>Орден Срібного Полум&#39;я.</strong> Магічний лицарський союз, що охороняє портали і контролює використання заборонених чар.</li>
-            <li><strong>Гільдія Підгорода.</strong> Торговці та ремісники, які забезпечують усі міста ресурсами. Вони встановлюють податки та стежать за балансом ринку.</li>
-            <li><strong>Клан Нічних Лотосів.</strong> Таємна організація шпигунів. Кожен агент має унікальні здібності маскування.</li>
-          </ul>
-        </div>
-      </article>
+    <section class="section-gap wiki-sections" aria-label="Розділи вікі">
+      <div class="container">
+        <div class="accordion-grid" id="wikiAccordion">
+          <article class="accordion-item active">
+            <button class="accordion-header" type="button" data-accordion="factions" aria-expanded="true" aria-controls="factions">
+              <h2>Фракції</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body active" id="factions">
+              <p>Кожна фракція має свій уклад, доступ до ресурсів та військову доктрину. Дотримуйся кодексу честі, щоб просуватися по службі.</p>
+              <ul class="fact-list">
+                <li><strong>Вікінги.</strong> Морські рейди, каравани металу й дисциплінована бойова підготовка.</li>
+                <li><strong>Слов’яни.</strong> Землеробство, ремесла та оборона поселень через віче.</li>
+                <li><strong>Візантійці.</strong> Торгівля через порти, дипломатія та розвиток міських держав.</li>
+              </ul>
+            </div>
+          </article>
 
-      <article class="accordion-item">
-        <button class="accordion-header" type="button" data-accordion="cities" aria-expanded="false" aria-controls="cities">
-          <h2>Міста</h2>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="accordion-body" id="cities">
-          <p>Міста розвиваються динамічно: будівлі з&#39;являються, якщо громада активно інвестує у проєкти. Захист стін, освітлення та інфраструктура впливають на рівень небезпеки вночі.</p>
-          <ul class="fact-list">
-            <li><strong>Гравенхолд.</strong> Столиця світу, місце розташування Ради Архонтів і головного ринку.</li>
-            <li><strong>Елліанор.</strong> Портове місто, яке спеціалізується на морській торгівлі та дослідженні океанічних храмів.</li>
-            <li><strong>Фіорія.</strong> Оаза серед пустелі, відома своїми алхімічними лабораторіями та турнірами з мечем.</li>
-          </ul>
-        </div>
-      </article>
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" data-accordion="laws" aria-expanded="false" aria-controls="laws">
+              <h2>Закони</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body" id="laws">
+              <p>Закони базуються на історичних статутах і регулюють торгівлю, оборону та поведінку між фракціями.</p>
+              <ul class="fact-list">
+                <li><strong>Кодекс честі.</strong> Забороняє зрадництво, самовільні напади та порушення договорів.</li>
+                <li><strong>Рада фракцій.</strong> Щотижнева зустріч лідерів, де ухвалюються рішення про податки та союзні угоди.</li>
+                <li><strong>Міські статути.</strong> Регулюють склади, торгівлю та доступ до майстерень.</li>
+              </ul>
+            </div>
+          </article>
 
-      <article class="accordion-item">
-        <button class="accordion-header" type="button" data-accordion="economy" aria-expanded="false" aria-controls="economy">
-          <h2>Економіка</h2>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="accordion-body" id="economy">
-          <p>Економіка сервера поєднує ручну працю та магічні ресурси. Ціни формуються попитом гравців, а державні контракти забезпечують стабільний дохід активним фракціям.</p>
-          <ul class="fact-list">
-            <li><strong>Контракти.</strong> Щотижневі державні замовлення на поставку ресурсів. Виконання гарантує бонусні монети та авторитет.</li>
-            <li><strong>Аукціони.</strong> Рідкісні предмети продаються через закриті торги. Доступ мають лише фракції з високою репутацією.</li>
-            <li><strong>Гільдійні внески.</strong> Регулярні пожертви у міську казну активують покращення інфраструктури і відкривають нові івенти.</li>
-          </ul>
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" data-accordion="economy" aria-expanded="false" aria-controls="economy">
+              <h2>Економіка</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body" id="economy">
+              <p>Економіка побудована на реальних моделях торгівлі. Каравани, податки та контракти впливають на ціни й доступ до ресурсів.</p>
+              <ul class="fact-list">
+                <li><strong>Постачання.</strong> Каравани забезпечують ресурси в зимові місяці, підтримують гарнізони та ярмарки.</li>
+                <li><strong>Контракти.</strong> Щотижневі угоди визначають обсяги зерна, металу й тканин між фракціями.</li>
+                <li><strong>Репутація.</strong> Стабільні поставки підвищують статус фракції та відкривають нові сценарії.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-header" type="button" data-accordion="winter" aria-expanded="false" aria-controls="winter">
+              <h2>Зимова кампанія</h2>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="accordion-body" id="winter">
+              <p>Зима 2025 додає дефіцит палива, замерзлі ріки та необхідність підтримувати теплі притулки.</p>
+              <ul class="fact-list">
+                <li><strong>Тепло.</strong> Фракції постачають дрова або вугілля до ключових форпостів.</li>
+                <li><strong>Лід.</strong> Переправи охороняються, щоб каравани не стали мішенню рейдів.</li>
+                <li><strong>Світло.</strong> Палаючі маяки та ліхтарі замінюють магію, допомагаючи орієнтуватися вночі.</li>
+              </ul>
+            </div>
+          </article>
         </div>
-      </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo-link" href="index.html">
+            <span class="logo-symbol">✧</span>
+            <span class="logo-text">GravenholdRP</span>
+          </a>
+          <p>Реалістичний середньовічний світ Minecraft без магії. Зимові кампанії, фракційні союзи та історичні сценарії.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Навігація у футері">
+          <a href="news.html">Звіт новин</a>
+          <a href="donate.html">Підтримка</a>
+          <a href="about.html">Про проєкт</a>
+          <a href="profile.html">Панель профілю</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Сервер онлайн 24/7</span>
+          <a href="https://discord.gg/" target="_blank" rel="noopener">Discord-рада</a>
+          <a href="mailto:gravenholdrp@gmail.com">gravenholdrp@gmail.com</a>
+          <a href="wiki.html">Довідник</a>
+        </div>
+      </div>
+      <small>© GravenholdRP 2025. Усі права захищено.</small>
+    </div>
   </footer>
 </body>
 </html>

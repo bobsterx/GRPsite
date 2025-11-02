@@ -1,225 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.page-about main {
+  padding-block-start: clamp(120px, 18vh, 180px);
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #0f0f10;
-  color: #f5f6ff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(12, 12, 20, 0.94);
-  backdrop-filter: blur(16px);
-  z-index: 1000;
-  box-shadow: 0 20px 60px rgba(79, 111, 255, 0.2);
-}
-
-.main-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 28px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-}
-
-.nav-links a {
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  padding: 10px 16px;
-  border-radius: 999px;
-  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  background: rgba(79, 111, 255, 0.18);
-  color: #9faeff;
-  box-shadow: 0 0 18px rgba(79, 111, 255, 0.35);
-}
-
-.nav-links a.active {
-  background: rgba(138, 94, 255, 0.35);
-  color: #ffffff;
-  box-shadow: 0 0 22px rgba(138, 94, 255, 0.45);
-}
-
-.logo-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(138, 94, 255, 0.35);
-  background: rgba(18, 18, 32, 0.65);
-  box-shadow: 0 12px 28px rgba(79, 111, 255, 0.22);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.logo-text {
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  background: linear-gradient(120deg, #f5f6ff 0%, #a89bff 45%, #8a5eff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 25px rgba(138, 94, 255, 0.35);
-}
-
-.logo-link:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 18px 38px rgba(138, 94, 255, 0.35);
-  border-color: rgba(138, 94, 255, 0.6);
-}
-
-main {
-  flex: 1;
-  padding: 130px 24px 80px;
-}
-
-.hero-section {
-  max-width: 1100px;
-  margin: 0 auto 70px;
+.about-heritage .heritage-grid {
+  margin-top: 52px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
 }
 
-.hero-visual {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 28px;
-  border: 1px solid rgba(79, 111, 255, 0.32);
-  box-shadow: 0 30px 60px rgba(12, 12, 24, 0.55);
-  background: radial-gradient(circle at 20% 20%, rgba(138, 94, 255, 0.6), transparent 60%),
-    radial-gradient(circle at 80% 25%, rgba(79, 111, 255, 0.5), transparent 62%),
-    radial-gradient(circle at 50% 80%, rgba(115, 92, 255, 0.4), transparent 65%),
-    linear-gradient(145deg, rgba(18, 18, 36, 0.95), rgba(32, 32, 58, 0.85));
+.heritage-card {
   position: relative;
+  padding: clamp(32px, 4vw, 42px);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: linear-gradient(140deg, rgba(12, 22, 36, 0.92), rgba(12, 22, 36, 0.55));
+  box-shadow: var(--shadow-card);
+  color: var(--text-muted);
   overflow: hidden;
 }
 
-.hero-visual::before,
-.hero-visual::after {
+.heritage-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-}
-
-.hero-visual::before {
-  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0 12px, transparent 12px 28px);
-  mix-blend-mode: screen;
-  opacity: 0.35;
-}
-
-.hero-visual::after {
-  background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.18), transparent 55%);
+  inset: -30% -20% auto;
+  height: 65%;
+  background: linear-gradient(115deg, rgba(85, 216, 255, 0.22), transparent 60%);
   opacity: 0.6;
+  pointer-events: none;
 }
 
-.hero-copy h1 {
-  font-size: clamp(2.6rem, 6vw, 3.6rem);
-  margin-bottom: 18px;
-}
-
-.hero-copy p {
-  color: #cfd5ff;
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.lore {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 48px;
-  border-radius: 30px;
-  background: linear-gradient(145deg, rgba(18, 18, 32, 0.92), rgba(30, 30, 55, 0.88));
-  border: 1px solid rgba(138, 94, 255, 0.3);
-  box-shadow: 0 24px 60px rgba(12, 12, 24, 0.55);
-}
-
-.lore h2 {
+.heritage-card h3 {
+  position: relative;
+  font-family: var(--font-display);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.95rem;
-  color: #8d9eff;
-  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  margin: 0 0 16px;
 }
 
-.lore p {
-  color: #d1d6ff;
-  line-height: 1.8;
-  margin-bottom: 18px;
+.heritage-card p {
+  position: relative;
+  margin: 0;
 }
 
-.contact {
-  max-width: 900px;
-  margin: 70px auto 0;
+.about-values .values-header {
+  max-width: 760px;
+}
+
+.values-grid {
+  margin-top: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.values-card {
+  padding: clamp(32px, 4vw, 40px);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-surface-strong) 88%, transparent);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 16px;
+}
+
+.values-card h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.values-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.about-team .team-grid {
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.team-card {
+  padding: clamp(34px, 4vw, 46px);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: linear-gradient(140deg, rgba(8, 16, 30, 0.95), rgba(8, 16, 30, 0.55));
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 14px;
+}
+
+.team-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-role {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+  margin: 0;
+}
+
+.team-card p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.about-contact .contact-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
 }
 
 .contact-card {
-  background: rgba(18, 18, 30, 0.8);
-  border-radius: 22px;
-  border: 1px solid rgba(79, 111, 255, 0.3);
-  padding: 28px;
-  box-shadow: 0 20px 45px rgba(12, 12, 24, 0.45);
+  padding: clamp(30px, 4vw, 40px);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  background: color-mix(in srgb, var(--bg-surface-strong) 85%, transparent);
+  box-shadow: var(--shadow-card);
+  color: var(--text-muted);
 }
 
 .contact-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .contact-card a {
-  color: #8a5eff;
-  font-weight: 600;
+  color: var(--accent-cyan);
 }
 
-footer {
-  text-align: center;
-  padding: 26px 16px;
-  background: rgba(12, 12, 18, 0.95);
-  border-top: 1px solid rgba(79, 111, 255, 0.2);
-  font-size: 0.9rem;
-  color: #96a4ff;
+@media (max-width: 1080px) {
+  .about-heritage .heritage-grid,
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-footer a {
-  color: #8a5eff;
-  font-weight: 600;
+@media (max-width: 880px) {
+  .about-team .team-grid,
+  .about-contact .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 600px) {
-  .lore {
-    padding: 32px;
+@media (max-width: 720px) {
+  .about-heritage .heritage-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 }

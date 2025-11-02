@@ -3,16 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('authForm');
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
-  const submitBtn = form?.querySelector('.primary-btn');
+  const submitBtn = form?.querySelector('button[type="submit"]');
   const switchBtn = document.getElementById('switchAuthBtn');
   const authModeLabel = document.getElementById('authModeLabel');
   const authStatus = document.getElementById('authStatus');
-  const authFormContainer = document.querySelector('.auth-form');
+  const authCard = document.querySelector('.auth-card');
   const profilePanel = document.getElementById('profilePanel');
   const welcomeMessage = document.getElementById('welcomeMessage');
   const logoutBtn = document.getElementById('logoutBtn');
 
   let mode = 'login';
+  let statsAnimated = false;
 
   setMode('login');
   updateView();
@@ -20,10 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   switchBtn?.addEventListener('click', () => {
     const newMode = mode === 'login' ? 'register' : 'login';
     setMode(newMode);
-    if (authStatus) {
-      authStatus.textContent = '';
-      authStatus.classList.remove('error', 'success');
-    }
+    showMessage('');
   });
 
   form?.addEventListener('submit', (event) => {
@@ -32,40 +30,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = passwordInput?.value.trim();
 
     if (!username || !password) {
-      return showMessage('Будь ласка, заповни всі поля.', 'error');
+      return showMessage('Заповни всі поля, будь ласка.', 'error');
     }
 
     const stored = getStoredUser();
 
     if (mode === 'register') {
       saveUser({ username });
-      updateView();
-      showMessage('');
+      showMessage('Профіль створено. Тепер увійди, щоб продовжити.', 'success');
+      setMode('login');
       form.reset();
-    } else {
-      if (!stored) {
-        return showMessage('Спершу зареєструй акаунт, щоб увійти.', 'error');
-      }
-      if (stored.username !== username) {
-        return showMessage('Нікнейм не знайдено. Спробуй ще раз або зареєструйся.', 'error');
-      }
-      updateView();
-      showMessage('');
-      form.reset();
+      return;
     }
+
+    if (!stored) {
+      return showMessage('Спершу зареєструй акаунт, щоб увійти.', 'error');
+    }
+
+    if (stored.username !== username) {
+      return showMessage('Нікнейм не знайдено. Спробуй ще раз.', 'error');
+    }
+
+    updateView();
+    showMessage('Успішний вхід. Гарної служби!', 'success');
+    form.reset();
   });
 
   logoutBtn?.addEventListener('click', () => {
     localStorage.removeItem(STORAGE_KEY);
-    showMessage('Ти вийшов із профілю. До зустрічі в GravenholdRP!', 'success');
-    updateView();
+    showMessage('Вихід виконано. До зустрічі у GravenholdRP!', 'success');
     setMode('login');
+    statsAnimated = false;
+    updateView();
     form?.reset();
   });
 
   function setMode(newMode) {
     mode = newMode;
     if (!switchBtn || !authModeLabel || !submitBtn) return;
+
     if (mode === 'login') {
       switchBtn.textContent = 'Зареєструватися';
       authModeLabel.textContent = 'Немає акаунта?';
@@ -79,24 +82,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateView() {
     const stored = getStoredUser();
-    if (stored && stored.username) {
-      if (authFormContainer) {
-        authFormContainer.style.display = 'none';
-      }
-      if (profilePanel) {
-        profilePanel.classList.add('active');
-      }
-      if (welcomeMessage) {
-        welcomeMessage.textContent = `Привіт, ${stored.username}!`;
-      }
-    } else {
-      if (authFormContainer) {
-        authFormContainer.style.display = '';
-      }
-      if (profilePanel) {
-        profilePanel.classList.remove('active');
-      }
+    const isLoggedIn = Boolean(stored?.username);
+
+    if (authCard) {
+      authCard.classList.toggle('hidden', isLoggedIn);
     }
+
+    if (profilePanel) {
+      profilePanel.classList.toggle('active', isLoggedIn);
+      profilePanel.classList.toggle('locked', !isLoggedIn);
+      profilePanel.setAttribute('aria-hidden', String(!isLoggedIn));
+    }
+
+    if (welcomeMessage) {
+      welcomeMessage.textContent = isLoggedIn ? `Привіт, ${stored.username}!` : 'Привіт, мандрівнику!';
+    }
+
+    if (isLoggedIn && !statsAnimated) {
+      requestAnimationFrame(() => animateStats());
+      statsAnimated = true;
+    }
+  }
+
+  function animateStats() {
+    if (!profilePanel) return;
+    const radialItems = profilePanel.querySelectorAll('.radial-progress');
+    radialItems.forEach((item) => {
+      const value = Number(item.dataset.progress) || 0;
+      item.style.setProperty('--progress', Math.max(0, Math.min(100, value)));
+      const valueEl = item.querySelector('.radial-value');
+      if (valueEl) {
+        valueEl.textContent = `${value}%`;
+      }
+    });
+
+    const bars = profilePanel.querySelectorAll('.progress-bar span');
+    bars.forEach((bar) => {
+      const container = bar.closest('.bar-item');
+      const label = container?.querySelector('.bar-value');
+      const value = Number(label?.dataset.bar || 0);
+      bar.style.width = `${Math.max(0, Math.min(100, value))}%`;
+      if (label) {
+        label.textContent = `${value}%`;
+      }
+    });
   }
 
   function getStoredUser() {

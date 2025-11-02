@@ -1,65 +1,181 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Про GravenholdRP — Наша історія та команда</title>
-  <meta name="description" content="Дізнайся, як народився світ GravenholdRP 1.20.1, хто стоїть за розробкою та як зв'язатися з командою сервера.">
+  <title>Про GravenholdRP — Команда, історія та бачення</title>
+  <meta name="description" content="Дізнайся про команду GravenholdRP, історію створення реалістичного середньовічного світу Minecraft та як ми готуємо зимові події без магії.">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/winterevent.css">
   <script src="js/main.js" defer></script>
+  <script src="js/winterevent.js" defer></script>
 </head>
-<body>
+<body class="page-about">
   <header class="site-header">
-    <nav class="main-nav">
-      <ul class="nav-links nav-left">
-        <li><a href="news.html">Новини</a></li>
-        <li><a href="wiki.html">Вікі</a></li>
-      </ul>
-      <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
-        <span class="logo-text">GravenholdRP</span>
-      </a>
-      <ul class="nav-links nav-right">
-        <li><a href="donate.html">Пожертви</a></li>
-        <li><a href="about.html">Про нас</a></li>
-        <li><a href="profile.html">Профіль</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a class="logo-link" href="index.html" aria-label="Головна GravenholdRP">
+          <span class="logo-symbol">✧</span>
+          <span class="logo-text">GravenholdRP</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" data-state="closed">
+          <a href="news.html">Новини</a>
+          <a href="wiki.html">Вікі</a>
+          <a href="donate.html">Пожертви</a>
+          <a href="about.html">Про нас</a>
+          <a href="profile.html">Профіль</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Перемкнути тему">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Темна</span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero-section">
-      <div class="hero-copy">
-        <h1>Світ, збудований спільнотою</h1>
-        <p>GravenholdRP існує з 2020 року як експеримент фанатів рольових ігор. Наша команда — це автори, будівельники та сценаристи, які створюють інтригуючі історії та масштабні івенти.</p>
-        <p>Ми віримо, що найкращі історії пишуть гравці. Тому документуємо кожну війну, перемир&#39;я та легендарний артефакт у спільній вікі та хроніках.</p>
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <p class="overline">Команда GravenholdRP</p>
+        <h1>Ми творимо реалістичний світ середньовіччя</h1>
+        <p>З 2020 року команда GravenholdRP відтворює історичні регіони Європи у Minecraft без магії. Ми працюємо з джерелами, реконструюємо побут та ведемо детальні сценарії, щоб кожна подія відчувалась як частина історії.</p>
       </div>
-      <div class="hero-visual" role="img" aria-label="Загадковий краєвид світу GravenholdRP"></div>
+      <div class="page-hero__badge">
+        <span>Штаб розробки</span>
+        <strong>Київ · Львів</strong>
+      </div>
     </section>
 
-    <section class="lore">
-      <h2>Хроніки GravenholdRP</h2>
-      <p>У заснуванні світу взяли участь чотири провидці, які керували стихіями. Вони створили міста, що відображають їхні ідеали: дисципліну, свободу, творчість і співпрацю. Після їх зникнення влада перейшла до гравців — саме ваші рішення тепер формують майбутнє.</p>
-      <p>Щосезону ми запускаємо нову сюжетну арку. У ній ти можеш взяти участь як герой, дипломат або зрадник. Кожна арка завершується великим фіналом, який стає офіційною історією серверу.</p>
+    <section class="section-gap about-heritage" aria-labelledby="heritage-title">
+      <div class="container">
+        <p class="overline">Наш шлях</p>
+        <h2 id="heritage-title" class="section-title">Як народився світ GravenholdRP</h2>
+        <p class="section-lead">Світ складається з трьох фракцій: Вікінги, Слов’яни, Візантійці. Щосезону ми адаптуємо реальні події, проводимо історичні дослідження й готуємо сценарії, які впливають на економіку та політику серверу.</p>
+        <div class="heritage-grid">
+          <article class="heritage-card">
+            <h3>2020 · Заснування</h3>
+            <p>Побудовано перші поселення, сформовано раду канону та закладено принципи реалізму без магії.</p>
+          </article>
+          <article class="heritage-card">
+            <h3>2023 · Економічна реформа</h3>
+            <p>Запущено гільдії ремісників, торгові каравани й систему звітності фракцій. Гравці отримали повний контроль над логістикою.</p>
+          </article>
+          <article class="heritage-card">
+            <h3>2025 · Зимова кампанія</h3>
+            <p>Додано холодний клімат, дефіцит ресурсів та військові облогові сценарії. Рішення спільноти змінюють карту у реальному часі.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="contact" aria-label="Контактна інформація">
-      <article class="contact-card">
-        <h3>Discord</h3>
-        <p>Приєднуйся до <a href="https://discord.gg/">офіційного серверу</a>, щоб отримати ролі, поставити питання та знайти групу для гри.</p>
-      </article>
-      <article class="contact-card">
-        <h3>Email</h3>
-        <p>Партнерські пропозиції надсилай на <a href="mailto:team@gravenholdrp.com">team@gravenholdrp.com</a>.</p>
-      </article>
-      <article class="contact-card">
-        <h3>Команда</h3>
-        <p>Керівник проєкту — Артем «Graven», головна сценаристка — Олена «Aurora», техлідер — Марко «Forge».</p>
-      </article>
+    <section class="section-gap about-values" aria-labelledby="values-title">
+      <div class="container">
+        <div class="values-header">
+          <p class="overline">Принципи</p>
+          <h2 id="values-title" class="section-title">Що визначає GravenholdRP</h2>
+          <p class="section-lead">Ми поєднуємо історичні джерела, ручну побудову локацій і строгу модерацію. Кожен гравець розуміє свою роль у фракції та впливає на сезон.</p>
+        </div>
+        <div class="values-grid">
+          <article class="values-card">
+            <h3>Історична точність</h3>
+            <p>Команда досліджує літописи, реконструює архітектуру й костюми, щоб усі події виглядали автентичними.</p>
+          </article>
+          <article class="values-card">
+            <h3>Реалістична економіка</h3>
+            <p>Система податків, торгівлі та дипломатії змушує фракції взаємодіяти і планувати довгострокові стратегії.</p>
+          </article>
+          <article class="values-card">
+            <h3>Спільнота</h3>
+            <p>Ми підтримуємо дружину модераторів, які допомагають новачкам, зберігають дисципліну та розвивають рольову гру.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gap about-team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="team-header">
+          <p class="overline">Команда</p>
+          <h2 id="team-title" class="section-title">Хто тримає світ у рівновазі</h2>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <h3>Артем «Graven»</h3>
+            <p class="team-role">Керівник проєкту</p>
+            <p>Координує сезонні кампанії, керує нарадою істориків та визначає пріоритети для розвитку серверу.</p>
+          </article>
+          <article class="team-card">
+            <h3>Олена «Aurora»</h3>
+            <p class="team-role">Головна сценаристка</p>
+            <p>Готує сюжетні арки, що базуються на хроніках Півночі та Русі, працює над дипломатичними сюжетами.</p>
+          </article>
+          <article class="team-card">
+            <h3>Марко «Forge»</h3>
+            <p class="team-role">Технічний лід</p>
+            <p>Будує фортифікації, оптимізує плагіни, керує стабільністю серверу під час великих подій.</p>
+          </article>
+          <article class="team-card">
+            <h3>Дарина «Skald»</h3>
+            <p class="team-role">Мистецький куратор</p>
+            <p>Створює атмосферні ресурспаки, музичні теми та веде архів зображень для зимових кампаній.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gap about-contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="overline">Зв’язок</p>
+        <h2 id="contact-title" class="section-title">Долучайся до спільноти</h2>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Discord</h3>
+            <p>Приєднуйся до <a href="https://discord.gg/" target="_blank" rel="noopener">офіційного сервера</a>, щоб отримувати накази, погоджувати рольові сцени та подавати заявки.</p>
+          </article>
+          <article class="contact-card">
+            <h3>Email</h3>
+            <p>Партнерські пропозиції надсилай на <a href="mailto:team@gravenholdrp.com">team@gravenholdrp.com</a>. Ми відкриті до історичних колаборацій.</p>
+          </article>
+          <article class="contact-card">
+            <h3>Ради фракцій</h3>
+            <p>Щомісяця проводимо закриті зустрічі для командирів. Подай заявку у Discord, щоб представляти свою дружину.</p>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    © GravenholdRP 2025 · <a href="https://discord.gg/">Наш Discord</a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo-link" href="index.html">
+            <span class="logo-symbol">✧</span>
+            <span class="logo-text">GravenholdRP</span>
+          </a>
+          <p>Реалістичний середньовічний світ Minecraft без магії. Зимові кампанії, фракційні союзи та історичні сценарії.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Навігація у футері">
+          <a href="news.html">Звіт новин</a>
+          <a href="wiki.html">Хроніки</a>
+          <a href="donate.html">Підтримка</a>
+          <a href="profile.html">Панель профілю</a>
+        </nav>
+        <div class="footer-meta">
+          <span>Сервер онлайн 24/7</span>
+          <a href="https://discord.gg/" target="_blank" rel="noopener">Discord-рада</a>
+          <a href="mailto:gravenholdrp@gmail.com">gravenholdrp@gmail.com</a>
+          <a href="news.html#reports">Архів наказів</a>
+        </div>
+      </div>
+      <small>© GravenholdRP 2025. Усі права захищено.</small>
+    </div>
   </footer>
 </body>
 </html>
