@@ -1,0 +1,22 @@
+{
+  "name": "gravenholdrp-launcher",
+  "version": "1.0.0",
+  "description": "GravenholdRP Desktop Launcher",
+  "main": "main.js",
+  "author": "GravenholdRP",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "lint": "eslint .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "electron": "^28.2.3",
+    "electron-builder": "^24.13.3",
+    "eslint": "^8.57.0"
+  }
+}

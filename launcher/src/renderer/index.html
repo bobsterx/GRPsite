@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; font-src 'self' data:;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GravenholdRP Launcher</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="theme-dark">
+    <div id="app">
+      <header class="titlebar" data-drag>
+        <div class="titlebar__branding">
+          <img src="assets/logo.svg" alt="Логотип" class="logo" />
+          <span class="title" data-i18n="appName">GravenholdRP</span>
+        </div>
+        <div class="titlebar__actions" data-no-drag>
+          <button id="btn-minimize" aria-label="Згорнути">−</button>
+          <button id="btn-maximize" aria-label="Розгорнути">□</button>
+          <button id="btn-close" aria-label="Закрити">×</button>
+        </div>
+      </header>
+
+      <main>
+        <nav class="sidebar" data-no-drag>
+          <button class="tab-button active" data-tab="home" data-i18n="tabs.home"></button>
+          <button class="tab-button" data-tab="updates" data-i18n="tabs.updates"></button>
+          <button class="tab-button" data-tab="settings" data-i18n="tabs.settings"></button>
+          <button class="tab-button" data-tab="support" data-i18n="tabs.support"></button>
+          <button class="tab-button" data-tab="social" data-i18n="tabs.social"></button>
+        </nav>
+
+        <section class="content">
+          <div class="background">
+            <canvas id="particle-canvas"></canvas>
+          </div>
+
+          <div id="update-banner" class="update-banner" hidden>
+            <span id="update-message"></span>
+            <button id="update-restart" class="primary small">Перезапустити</button>
+          </div>
+
+          <section id="home" class="tab active">
+            <div class="hero">
+              <h1 data-i18n="home.welcomeTitle"></h1>
+              <p data-i18n="home.welcomeSubtitle"></p>
+            </div>
+
+            <h2 data-i18n="home.componentsTitle"></h2>
+            <div id="components" class="components-list"></div>
+
+            <div class="launch-wrapper">
+              <button id="launch" class="primary" disabled data-i18n="home.launch"></button>
+            </div>
+          </section>
+
+          <section id="updates" class="tab">
+            <h2 data-i18n="updates.title"></h2>
+            <div id="updates-list" class="updates-list"></div>
+          </section>
+
+          <section id="settings" class="tab">
+            <h2 data-i18n="tabs.settings"></h2>
+            <form id="settings-form" class="settings-form">
+              <label>
+                <span data-i18n="settings.javaPath"></span>
+                <div class="input-group">
+                  <input type="text" id="java-path" readonly />
+                  <button type="button" id="select-java" data-i18n="settings.choose"></button>
+                </div>
+              </label>
+
+              <label>
+                <span data-i18n="settings.ram"></span>
+                <input type="number" id="ram" min="1" max="32" step="1" />
+              </label>
+
+              <label>
+                <span data-i18n="settings.resolution"></span>
+                <div class="resolution-group">
+                  <input type="number" id="resolution-width" min="800" max="3840" step="10" />
+                  <span>×</span>
+                  <input type="number" id="resolution-height" min="600" max="2160" step="10" />
+                </div>
+              </label>
+
+              <label>
+                <span data-i18n="settings.theme"></span>
+                <div class="toggle-group">
+                  <button type="button" id="theme-dark" class="toggle active" data-theme="dark" data-i18n="settings.dark"></button>
+                  <button type="button" id="theme-light" class="toggle" data-theme="light" data-i18n="settings.light"></button>
+                </div>
+              </label>
+
+              <label class="switch">
+                <input type="checkbox" id="winter-mode" />
+                <span class="slider"></span>
+                <span class="label" data-i18n="settings.winter"></span>
+              </label>
+
+              <label class="switch">
+                <input type="checkbox" id="auto-update" />
+                <span class="slider"></span>
+                <span class="label" data-i18n="settings.autoUpdate"></span>
+              </label>
+
+              <div class="form-actions">
+                <button type="submit" class="primary" data-i18n="settings.save"></button>
+              </div>
+            </form>
+          </section>
+
+          <section id="support" class="tab">
+            <div class="support-grid">
+              <div>
+                <h2 data-i18n="support.faqTitle"></h2>
+                <ul class="faq">
+                  <li>
+                    <h3>Як встановити моди?</h3>
+                    <p>Усі необхідні моди встановлюються у вкладці «Головна».</p>
+                  </li>
+                  <li>
+                    <h3>Чи потрібен ліцензійний Minecraft?</h3>
+                    <p>Так, для гри на GravenholdRP потрібна офіційна версія Minecraft.</p>
+                  </li>
+                  <li>
+                    <h3>Як увімкнути зимовий режим?</h3>
+                    <p>Перейдіть у «Налаштування» та увімкніть тумблер «Зимовий режим».</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="contact">
+                <h2 data-i18n="support.contactTitle"></h2>
+                <form id="support-form">
+                  <label>
+                    <span data-i18n="support.category"></span>
+                    <select id="support-category">
+                      <option value="tech" data-i18n="support.categories.tech"></option>
+                      <option value="account" data-i18n="support.categories.account"></option>
+                      <option value="other" data-i18n="support.categories.other"></option>
+                    </select>
+                  </label>
+                  <label>
+                    <span data-i18n="support.email"></span>
+                    <input type="email" id="support-email" required />
+                  </label>
+                  <label>
+                    <span data-i18n="support.message"></span>
+                    <textarea id="support-message" rows="4" required></textarea>
+                  </label>
+                  <button type="submit" class="primary" data-i18n="support.send"></button>
+                  <p id="support-status" role="status"></p>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section id="social" class="tab">
+            <h2 data-i18n="tabs.social"></h2>
+            <div class="social-grid">
+              <a href="https://discord.gg/gravenhold" class="social-card" data-platform="discord" target="_blank">
+                <span data-i18n="social.discord"></span>
+              </a>
+              <a href="https://t.me/gravenholdrp" class="social-card" data-platform="telegram" target="_blank">
+                <span data-i18n="social.telegram"></span>
+              </a>
+              <a href="https://gravenholdrp.com" class="social-card" data-platform="website" target="_blank">
+                <span data-i18n="social.website"></span>
+              </a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="scripts/renderer.js"></script>
+  </body>
+</html>
